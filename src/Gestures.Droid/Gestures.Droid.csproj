@@ -10,8 +10,8 @@
     <TemplateGuid>{9ef11e43-1701-4396-8835-8392d57abb70}</TemplateGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gestures.Droid</RootNamespace>
-    <AssemblyName>Gestures.Droid</AssemblyName>
+    <RootNamespace>Velocity.Gestures.Droid</RootNamespace>
+    <AssemblyName>Velocity.Gestures.Droid</AssemblyName>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <CodeAnalysisRuleSet>..\..\StyleCop.ruleset</CodeAnalysisRuleSet>
     <FileAlignment>512</FileAlignment>

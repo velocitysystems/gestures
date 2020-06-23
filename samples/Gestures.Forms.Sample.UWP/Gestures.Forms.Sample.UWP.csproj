@@ -7,12 +7,12 @@
     <ProjectGuid>{6082E987-A27E-445D-AD42-F4303D4864EF}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gestures.Forms.Sample.UWP</RootNamespace>
-    <AssemblyName>Gestures.Forms.Sample.UWP</AssemblyName>
+    <RootNamespace>Velocity.Gestures.Forms.Sample.UWP</RootNamespace>
+    <AssemblyName>Velocity.Gestures.Forms.Sample.UWP</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.18362.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
     <FileAlignment>512</FileAlignment>
@@ -146,10 +146,14 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.495" />
-    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.1.9"/>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.10" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Gestures.Forms.UWP\Gestures.Forms.UWP.csproj">
+      <Project>{d808957c-10fe-4920-bb92-7054c7395278}</Project>
+      <Name>Gestures.Forms.UWP</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Gestures.Forms.Sample\Gestures.Forms.Sample.csproj">
       <Project>{DD413C36-84B8-4647-BCD2-B38E0103B566}</Project>
       <Name>Gestures.Forms.Sample</Name>

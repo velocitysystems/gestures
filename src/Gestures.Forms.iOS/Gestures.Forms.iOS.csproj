@@ -9,9 +9,9 @@
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{a52b8a63-bc84-4b47-910d-692533484892}</TemplateGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Gestures.Forms.iOS</RootNamespace>
+    <RootNamespace>Velocity.Gestures.Forms.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>Gestures.Forms.iOS</AssemblyName>
+    <AssemblyName>Velocity.Gestures.Forms.iOS</AssemblyName>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <CodeAnalysisRuleSet>..\..\StyleCop.ruleset</CodeAnalysisRuleSet>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
@@ -42,8 +42,19 @@
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gestures.Forms\Gestures.Forms.csproj">
+      <Project>{c5c94a7d-738d-48d6-8c90-fce30c75dcee}</Project>
+      <Name>Gestures.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gestures.iOS\Gestures.iOS.csproj">
+      <Project>{8ed350e4-cce8-4c56-be52-a90fb8f39e4b}</Project>
+      <Name>Gestures.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

@@ -7,8 +7,8 @@
     <ProjectGuid>{753A1EC5-D798-4C36-8BE5-1A8E0A779C70}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gestures.UWP</RootNamespace>
-    <AssemblyName>Gestures.UWP</AssemblyName>
+    <RootNamespace>Velocity.Gestures.UWP</RootNamespace>
+    <AssemblyName>Velocity.Gestures.UWP</AssemblyName>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <CodeAnalysisRuleSet>..\..\StyleCop.ruleset</CodeAnalysisRuleSet>
     <DefaultLanguage>en-US</DefaultLanguage>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -7,8 +7,8 @@
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{6968b3a4-1835-46a3-ac5c-1ae33b475983}</TemplateGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Gestures.Forms.Sample.Droid</RootNamespace>
-    <AssemblyName>Gestures.Forms.Sample.Droid</AssemblyName>
+    <RootNamespace>Velocity.Gestures.Forms.Sample.Droid</RootNamespace>
+    <AssemblyName>Velocity.Gestures.Forms.Sample.Droid</AssemblyName>
     <Deterministic>True</Deterministic>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
@@ -87,10 +87,14 @@
     <AndroidResource Include="Resources\drawable\xamarin_logo.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Gestures.Forms.Droid\Gestures.Forms.Droid.csproj">
+      <Project>{2116aa44-8ba2-41a1-834b-6660e898da99}</Project>
+      <Name>Gestures.Forms.Droid</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Gestures.Forms.Sample\Gestures.Forms.Sample.csproj">
       <Project>{DD413C36-84B8-4647-BCD2-B38E0103B566}</Project>
       <Name>Gestures.Forms.Sample</Name>
     </ProjectReference>
   </ItemGroup>
- <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

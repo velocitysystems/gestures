@@ -10,8 +10,8 @@
     <TemplateGuid>{9ef11e43-1701-4396-8835-8392d57abb70}</TemplateGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gestures.Forms.Droid</RootNamespace>
-    <AssemblyName>Gestures.Forms.Droid</AssemblyName>
+    <RootNamespace>Velocity.Gestures.Forms.Droid</RootNamespace>
+    <AssemblyName>Velocity.Gestures.Forms.Droid</AssemblyName>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <CodeAnalysisRuleSet>..\..\StyleCop.ruleset</CodeAnalysisRuleSet>
     <FileAlignment>512</FileAlignment>
@@ -49,7 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -64,6 +63,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gestures.Droid\Gestures.Droid.csproj">
+      <Project>{75ca4a76-2a28-41eb-962a-81d8c490ad97}</Project>
+      <Name>Gestures.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gestures.Forms\Gestures.Forms.csproj">
+      <Project>{c5c94a7d-738d-48d6-8c90-fce30c75dcee}</Project>
+      <Name>Gestures.Forms</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -10,8 +10,8 @@
     <TemplateGuid>{e0dc9abc-7303-488b-8af1-61e341bd2a32}</TemplateGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gestures.Sample.Droid</RootNamespace>
-    <AssemblyName>Gestures.Sample.Droid</AssemblyName>
+    <RootNamespace>Velocity.Gestures.Sample.Droid</RootNamespace>
+    <AssemblyName>Velocity.Gestures.Sample.Droid</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <Deterministic>True</Deterministic>
     <AndroidApplication>True</AndroidApplication>

@@ -7,9 +7,9 @@
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{f1d599d5-32e4-4ac3-bfce-fa91478e30e4}</TemplateGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Gestures.Sample.iOS</RootNamespace>
+    <RootNamespace>Velocity.Gestures.Sample.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>Gestures.Sample.iOS</AssemblyName>
+    <AssemblyName>Velocity.Gestures.Sample.iOS</AssemblyName>
     <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>

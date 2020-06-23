@@ -5,6 +5,8 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <CodeAnalysisRuleSet>..\..\StyleCop.ruleset</CodeAnalysisRuleSet>
     <IsPackable>false</IsPackable>
+    <AssemblyName>Velocity.Gestures.Tests</AssemblyName>
+    <RootNamespace>Velocity.Gestures.Tests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

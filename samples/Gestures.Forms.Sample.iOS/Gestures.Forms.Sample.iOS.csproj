@@ -9,9 +9,9 @@
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{89a4fe7c-635d-49c9-8d8c-5cd363c0d68d}</TemplateGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Gestures.Forms.Sample.iOS</RootNamespace>
+    <RootNamespace>Velocity.Gestures.Forms.Sample.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>Gestures.Forms.Sample.iOS</AssemblyName>
+    <AssemblyName>Velocity.Gestures.Forms.Sample.iOS</AssemblyName>
     <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <ProvisioningType>automatic</ProvisioningType>
@@ -137,6 +137,12 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Gestures.Forms.iOS\Gestures.Forms.iOS.csproj">
+      <Project>{e3db9a2c-fd55-4bda-9a55-1178d2ca7394}</Project>
+      <Name>Gestures.Forms.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
+    </ProjectReference>
     <ProjectReference Include="..\Gestures.Forms.Sample\Gestures.Forms.Sample.csproj">
       <Project>{DD413C36-84B8-4647-BCD2-B38E0103B566}</Project>
       <Name>Gestures.Forms.Sample</Name>

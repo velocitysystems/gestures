@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <CodeAnalysisRuleSet>..\..\StyleCop.ruleset</CodeAnalysisRuleSet>
+    <AssemblyName>Velocity.Gestures.Forms</AssemblyName>
+    <RootNamespace>Velocity.Gestures.Forms</RootNamespace>
+  </PropertyGroup>
+
+</Project>

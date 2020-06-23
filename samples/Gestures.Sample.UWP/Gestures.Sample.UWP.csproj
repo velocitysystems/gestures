@@ -7,8 +7,8 @@
     <ProjectGuid>{12221E8F-200B-4D7D-AA82-9FD19D6F945B}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gestures.Sample.UWP</RootNamespace>
-    <AssemblyName>Gestures.Sample.UWP</AssemblyName>
+    <RootNamespace>Velocity.Gestures.Sample.UWP</RootNamespace>
+    <AssemblyName>Velocity.Gestures.Sample.UWP</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.18362.0</TargetPlatformVersion>
