@@ -16,4 +16,9 @@
     <PackageReference Include="Xamarin.Forms" Version="4.6.0.967" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Include="..\..\SolutionInfo.cs">
+      <Link>SolutionInfo.cs</Link>
+    </Compile>
+  </ItemGroup>
 </Project>

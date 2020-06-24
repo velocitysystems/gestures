@@ -42,9 +42,6 @@
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Gestures.Forms\Gestures.Forms.csproj">
       <Project>{c5c94a7d-738d-48d6-8c90-fce30c75dcee}</Project>
       <Name>Gestures.Forms</Name>
@@ -65,6 +62,11 @@
     <PackageReference Include="Xamarin.Forms">
       <Version>4.6.0.967</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\SolutionInfo.cs">
+      <Link>SolutionInfo.cs</Link>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
