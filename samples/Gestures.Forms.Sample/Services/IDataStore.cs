@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Gestures.Forms.Sample.Services
+namespace Velocity.Gestures.Forms.Sample.Services
 {
     public interface IDataStore<T>
     {

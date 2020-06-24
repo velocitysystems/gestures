@@ -4,8 +4,8 @@
             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
             mc:Ignorable="d"
-            xmlns:views="clr-namespace:Gestures.Forms.Sample.Views"
-            x:Class="Gestures.Forms.Sample.Views.MainPage">
+            xmlns:views="clr-namespace:Velocity.Gestures.Forms.Sample.Views"
+            x:Class="Velocity.Gestures.Forms.Sample.Views.MainPage">
 
     <TabbedPage.Children>
         <NavigationPage Title="Browse">

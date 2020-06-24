@@ -3,7 +3,7 @@ using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
-namespace Gestures.Forms.Sample.ViewModels
+namespace Velocity.Gestures.Forms.Sample.ViewModels
 {
     public class AboutViewModel : BaseViewModel
     {

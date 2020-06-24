@@ -4,8 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Gestures.Forms.Sample.Views.AboutPage"
-             xmlns:vm="clr-namespace:Gestures.Forms.Sample.ViewModels"
+             x:Class="Velocity.Gestures.Forms.Sample.Views.AboutPage"
+             xmlns:vm="clr-namespace:Velocity.Gestures.Forms.Sample.ViewModels"
              Title="{Binding Title}">
     
     <ContentPage.BindingContext>

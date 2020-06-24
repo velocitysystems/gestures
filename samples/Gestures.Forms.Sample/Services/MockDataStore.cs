@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Gestures.Forms.Sample.Models;
+using Velocity.Gestures.Forms.Sample.Models;
 
-namespace Gestures.Forms.Sample.Services
+namespace Velocity.Gestures.Forms.Sample.Services
 {
     public class MockDataStore : IDataStore<Item>
     {

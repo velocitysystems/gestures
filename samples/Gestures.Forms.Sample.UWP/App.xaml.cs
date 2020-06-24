@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace Gestures.Forms.Sample.UWP
+namespace Velocity.Gestures.Forms.Sample.UWP
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.

@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-using Gestures.Forms.Sample.Models;
-using Gestures.Forms.Sample.Views;
+using Velocity.Gestures.Forms.Sample.Models;
+using Velocity.Gestures.Forms.Sample.Views;
 
-namespace Gestures.Forms.Sample.ViewModels
+namespace Velocity.Gestures.Forms.Sample.ViewModels
 {
     public class ItemsViewModel : BaseViewModel
     {

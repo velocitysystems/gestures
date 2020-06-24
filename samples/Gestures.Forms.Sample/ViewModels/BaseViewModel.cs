@@ -5,10 +5,10 @@ using System.Runtime.CompilerServices;
 
 using Xamarin.Forms;
 
-using Gestures.Forms.Sample.Models;
-using Gestures.Forms.Sample.Services;
+using Velocity.Gestures.Forms.Sample.Models;
+using Velocity.Gestures.Forms.Sample.Services;
 
-namespace Gestures.Forms.Sample.ViewModels
+namespace Velocity.Gestures.Forms.Sample.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {

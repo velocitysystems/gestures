@@ -4,9 +4,9 @@ using System.ComponentModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using Gestures.Forms.Sample.Models;
+using Velocity.Gestures.Forms.Sample.Models;
 
-namespace Gestures.Forms.Sample.Views
+namespace Velocity.Gestures.Forms.Sample.Views
 {
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer

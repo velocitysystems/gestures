@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using Gestures.Forms.Sample.Models;
-using Gestures.Forms.Sample.Views;
-using Gestures.Forms.Sample.ViewModels;
+using Velocity.Gestures.Forms.Sample.Models;
+using Velocity.Gestures.Forms.Sample.Views;
+using Velocity.Gestures.Forms.Sample.ViewModels;
 
-namespace Gestures.Forms.Sample.Views
+namespace Velocity.Gestures.Forms.Sample.Views
 {
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer

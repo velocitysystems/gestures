@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Gestures.Forms.Sample.Models
+namespace Velocity.Gestures.Forms.Sample.Models
 {
     public class Item
     {

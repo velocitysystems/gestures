@@ -1,10 +1,10 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Gestures.Forms.Sample.Services;
-using Gestures.Forms.Sample.Views;
+using Velocity.Gestures.Forms.Sample.Services;
+using Velocity.Gestures.Forms.Sample.Views;
 
-namespace Gestures.Forms.Sample
+namespace Velocity.Gestures.Forms.Sample
 {
     public partial class App : Application
     {

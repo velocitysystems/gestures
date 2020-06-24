@@ -13,7 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace Gestures.Forms.Sample.UWP
+namespace Velocity.Gestures.Forms.Sample.UWP
 {
     public sealed partial class MainPage
     {
@@ -21,7 +21,7 @@ namespace Gestures.Forms.Sample.UWP
         {
             this.InitializeComponent();
 
-            LoadApplication(new Gestures.Forms.Sample.App());
+            LoadApplication(new Velocity.Gestures.Forms.Sample.App());
         }
     }
 }
