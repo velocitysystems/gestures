@@ -16,7 +16,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
@@ -92,7 +91,7 @@
       <Name>Gestures.Forms.Droid</Name>
     </ProjectReference>
     <ProjectReference Include="..\Gestures.Forms.Sample\Gestures.Forms.Sample.csproj">
-      <Project>{DD413C36-84B8-4647-BCD2-B38E0103B566}</Project>
+      <Project>{65F194D0-4A5F-4FA2-BD4E-66297F7040EB}</Project>
       <Name>Gestures.Forms.Sample</Name>
     </ProjectReference>
   </ItemGroup>
