@@ -1,6 +1,6 @@
 ﻿using AppKit;
 
-namespace Gestures.Sample.MacOS
+namespace Velocity.Gestures.Sample.MacOS
 {
     static class MainClass
     {

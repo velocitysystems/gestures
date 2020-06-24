@@ -1,6 +1,6 @@
 ﻿using UIKit;
 
-namespace Gestures.Sample.iOS
+namespace Velocity.Gestures.Sample.iOS
 {
     public class Application
     {

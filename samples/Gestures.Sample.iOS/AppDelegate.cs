@@ -1,7 +1,7 @@
 ﻿using Foundation;
 using UIKit;
 
-namespace Gestures.Sample.iOS
+namespace Velocity.Gestures.Sample.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the
     // User Interface of the application, as well as listening (and optionally responding) to application events from iOS.

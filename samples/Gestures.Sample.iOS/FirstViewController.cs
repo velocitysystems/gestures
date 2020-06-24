@@ -2,7 +2,7 @@
 
 using UIKit;
 
-namespace Gestures.Sample.iOS
+namespace Velocity.Gestures.Sample.iOS
 {
     public partial class FirstViewController : UIViewController
     {

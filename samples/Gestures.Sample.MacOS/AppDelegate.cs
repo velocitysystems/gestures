@@ -1,7 +1,7 @@
 ﻿using AppKit;
 using Foundation;
 
-namespace Gestures.Sample.MacOS
+namespace Velocity.Gestures.Sample.MacOS
 {
     [Register("AppDelegate")]
     public class AppDelegate : NSApplicationDelegate
