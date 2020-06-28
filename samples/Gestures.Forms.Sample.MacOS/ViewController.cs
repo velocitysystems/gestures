@@ -3,7 +3,7 @@
 using AppKit;
 using Foundation;
 
-namespace Gestures.Forms.Sample.MacOS
+namespace Velocity.Gestures.Forms.Sample.MacOS
 {
     public partial class ViewController : NSViewController
     {

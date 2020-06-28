@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace Gestures.Forms.Sample.iOS
+namespace Velocity.Gestures.Forms.Sample.iOS
 {
     public class Application
     {

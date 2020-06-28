@@ -1,7 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using Velocity.Gestures.Forms.Sample.Services;
+﻿using Xamarin.Forms;
 using Velocity.Gestures.Forms.Sample.Views;
 
 namespace Velocity.Gestures.Forms.Sample
@@ -12,8 +9,6 @@ namespace Velocity.Gestures.Forms.Sample
         public App()
         {
             InitializeComponent();
-
-            DependencyService.Register<MockDataStore>();
             MainPage = new MainPage();
         }
 

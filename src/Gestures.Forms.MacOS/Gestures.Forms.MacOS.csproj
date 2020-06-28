@@ -65,6 +65,14 @@
       <Project>{623A88D4-D581-41F6-B48E-A8FF3C47A567}</Project>
       <Name>Gestures.MacOS</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Gestures\Gestures.csproj">
+      <Project>{FD73DF7D-F53A-43B9-866C-B3874559D1FF}</Project>
+      <Name>Gestures</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gestures.Forms\Gestures.Forms.csproj">
+      <Project>{C5C94A7D-738D-48D6-8C90-FCE30C75DCEE}</Project>
+      <Name>Gestures.Forms</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="StyleCop.Analyzers">
@@ -80,6 +88,11 @@
     <Compile Include="..\..\SolutionInfo.cs">
       <Link>SolutionInfo.cs</Link>
     </Compile>
+    <Compile Include="Platform.cs" />
+    <Compile Include="Effects\RecognizerPlatformEffect.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Effects\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
 </Project>

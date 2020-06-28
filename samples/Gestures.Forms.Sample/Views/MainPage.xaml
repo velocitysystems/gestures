@@ -8,25 +8,33 @@
             x:Class="Velocity.Gestures.Forms.Sample.Views.MainPage">
 
     <TabbedPage.Children>
-        <NavigationPage Title="Browse">
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="tab_feed.png"/>
-                </OnPlatform>
-            </NavigationPage.Icon>
+        <NavigationPage Title="Tap">
             <x:Arguments>
-                <views:ItemsPage />
+                <views:TapSamplePage />
             </x:Arguments>
         </NavigationPage>
         
-        <NavigationPage Title="About">
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="tab_about.png"/>
-                </OnPlatform>
-            </NavigationPage.Icon>
+        <NavigationPage Title="Long Press">
             <x:Arguments>
-                <views:AboutPage />
+                <views:LongPressSamplePage />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Swipe">
+            <x:Arguments>
+                <views:SwipeSamplePage />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Pan">
+            <x:Arguments>
+                <views:PanSamplePage />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Pinch">
+            <x:Arguments>
+                <views:PinchSamplePage />
             </x:Arguments>
         </NavigationPage>
     </TabbedPage.Children>

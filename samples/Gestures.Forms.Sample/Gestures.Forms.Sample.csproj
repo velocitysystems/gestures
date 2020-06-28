@@ -19,5 +19,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Gestures.Forms\Gestures.Forms.csproj" />
+    <ProjectReference Include="..\..\src\Gestures\Gestures.csproj" />
   </ItemGroup>
 </Project>

@@ -40,6 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Recognizers\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="StyleCop.Analyzers">
@@ -47,12 +49,26 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="System.Reactive">
+      <Version>4.4.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\SolutionInfo.cs">
       <Link>SolutionInfo.cs</Link>
     </Compile>
+    <Compile Include="Recognizers\LongPressRecognizer.cs" />
+    <Compile Include="Recognizers\PanRecognizer.cs" />
+    <Compile Include="Recognizers\PinchRecognizer.cs" />
+    <Compile Include="Recognizers\SwipeRecognizer.cs" />
+    <Compile Include="Recognizers\TapRecognizer.cs" />
+    <Compile Include="Extensions\UIKitExtensions.cs" />
   </ItemGroup>
-  <Import Project="..\Gestures.Shared\Gestures.Shared.projitems" Label="Shared" />
+  <ItemGroup>
+    <ProjectReference Include="..\Gestures\Gestures.csproj">
+      <Project>{FD73DF7D-F53A-43B9-866C-B3874559D1FF}</Project>
+      <Name>Gestures</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
