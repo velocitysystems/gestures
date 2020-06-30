@@ -13,8 +13,8 @@ Cross-platform, multi-touch gesture recognition for Android, iOS, macOS, UWP and
 **Windows (.NET Standard)**
 |Type|UWP|WPF|
 |---|---|---|
-|`TapRecognizer`|❌|❌|
-|`LongPressRecognizer`|❌|❌|
+|`TapRecognizer`|✅|✅|
+|`LongPressRecognizer`|✅|✅|
 |`SwipeRecognizer`|❌|❌|
 |`PanRecognizer`|❌|❌|
 |`PinchRecognizer`|❌|❌|
@@ -22,8 +22,8 @@ Cross-platform, multi-touch gesture recognition for Android, iOS, macOS, UWP and
 **Xamarin.Forms**
 |Type|Android|iOS|macOS|UWP|WPF|
 |---|---|---|---|---|---|
-|`TapGestureRecognizer`|❌|✅|✅|❌|❌|
-|`LongPressGestureRecognizer`|❌|✅|❌|❌|❌|
+|`TapGestureRecognizer`|❌|✅|✅|✅|✅|
+|`LongPressGestureRecognizer`|❌|✅|❌|✅|✅|
 |`SwipeGestureRecognizer`|❌|✅|❌|❌|❌|
 |`PanGestureRecognizer`|❌|✅|❌|❌|❌|
 |`PinchGestureRecognizer`|❌|✅|❌|❌|❌|

@@ -101,9 +101,9 @@
       <Project>{6a1ed8fd-04db-4cca-be68-f56c8bfc3367}</Project>
       <Name>Gestures.Forms.WPF</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\src\Gestures.Forms\Gestures.Forms.csproj">
-      <Project>{c5c94a7d-738d-48d6-8c90-fce30c75dcee}</Project>
-      <Name>Gestures.Forms</Name>
+    <ProjectReference Include="..\Gestures.Forms.Sample\Gestures.Forms.Sample.csproj">
+      <Project>{65f194d0-4a5f-4fa2-bd4e-66297f7040eb}</Project>
+      <Name>Gestures.Forms.Sample</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -60,16 +60,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestures.Sample.WPF", "samp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestures.Forms.Sample.WPF", "samples\Gestures.Forms.Sample.WPF\Gestures.Forms.Sample.WPF.csproj", "{78AF75E4-AF20-4F77-9128-99573AB099F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestures", "src\Gestures\Gestures.csproj", "{FD73DF7D-F53A-43B9-866C-B3874559D1FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gestures", "src\Gestures\Gestures.csproj", "{FD73DF7D-F53A-43B9-866C-B3874559D1FF}"
 EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		src\Gestures.Shared\Gestures.Shared.projitems*{753a1ec5-d798-4c36-8be5-1a8e0a779c70}*SharedItemsImports = 4
-		src\Gestures.Shared\Gestures.Shared.projitems*{75ca4a76-2a28-41eb-962a-81d8c490ad97}*SharedItemsImports = 4
-		src\Gestures.Shared\Gestures.Shared.projitems*{78a9b246-1db5-449f-850d-6f5286672114}*SharedItemsImports = 5
-		src\Gestures.Shared\Gestures.Shared.projitems*{8ed350e4-cce8-4c56-be52-a90fb8f39e4b}*SharedItemsImports = 4
-		src\Gestures.Shared\Gestures.Shared.projitems*{ddcf9363-b9c1-4328-b754-a3a530bc9402}*SharedItemsImports = 13
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|ARM = Debug|ARM

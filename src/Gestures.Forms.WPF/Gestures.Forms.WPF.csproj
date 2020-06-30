@@ -58,6 +58,11 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\SolutionInfo.cs">
+      <Link>SolutionInfo.cs</Link>
+    </Compile>
+    <Compile Include="Effects\RecognizerPlatformEffect.cs" />
+    <Compile Include="Platform.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -78,9 +83,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Gestures.Forms\Gestures.Forms.csproj">
+      <Project>{c5c94a7d-738d-48d6-8c90-fce30c75dcee}</Project>
+      <Name>Gestures.Forms</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Gestures.WPF\Gestures.WPF.csproj">
       <Project>{a532ac69-1a54-46eb-9778-4d136d60cb67}</Project>
       <Name>Gestures.WPF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gestures\Gestures.csproj">
+      <Project>{fd73df7d-f53a-43b9-866c-b3874559d1ff}</Project>
+      <Name>Gestures</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -89,7 +102,10 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms">
+    <PackageReference Include="System.Reactive">
+      <Version>4.4.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms.Platform.WPF">
       <Version>4.6.0.967</Version>
     </PackageReference>
   </ItemGroup>

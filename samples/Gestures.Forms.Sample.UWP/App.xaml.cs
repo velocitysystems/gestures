@@ -58,6 +58,7 @@ namespace Velocity.Gestures.Forms.Sample.UWP
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
                 Xamarin.Forms.Forms.Init(e);
+                Velocity.Gestures.Forms.UWP.Platform.Init();
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {

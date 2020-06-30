@@ -27,6 +27,7 @@ namespace Velocity.Gestures.Forms.Sample.WPF
             InitializeComponent();
 
             Xamarin.Forms.Forms.Init();
+            Velocity.Gestures.Forms.WPF.Platform.Init();
             LoadApplication(new Velocity.Gestures.Forms.Sample.App());
         }
     }

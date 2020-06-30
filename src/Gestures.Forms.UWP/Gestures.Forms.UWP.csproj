@@ -133,6 +133,10 @@
       <Project>{753a1ec5-d798-4c36-8be5-1a8e0a779c70}</Project>
       <Name>Gestures.UWP</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Gestures\Gestures.csproj">
+      <Project>{fd73df7d-f53a-43b9-866c-b3874559d1ff}</Project>
+      <Name>Gestures</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="StyleCop.Analyzers">
@@ -140,9 +144,19 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="System.Reactive">
+      <Version>4.4.1</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms">
       <Version>4.6.0.967</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\SolutionInfo.cs">
+      <Link>SolutionInfo.cs</Link>
+    </Compile>
+    <Compile Include="Effects\RecognizerPlatformEffect.cs" />
+    <Compile Include="Platform.cs" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
