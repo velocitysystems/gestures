@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-
+using System.Diagnostics;
 using Xamarin.Forms;
 
 namespace Velocity.Gestures.Forms.Sample.Views
@@ -21,5 +20,8 @@ namespace Velocity.Gestures.Forms.Sample.Views
                 PinchingStatus.Text = "";
             }
         }
+
+        void OnFrameTouchesBegan(object sender, Point e) => Debug.WriteLine($"Touches Began: {e.X},{e.Y}");
+        void OnFrameTouchesEnded(object sender, Point e) => Debug.WriteLine($"Touches Ended: {e.X},{e.Y}");
     }
 }

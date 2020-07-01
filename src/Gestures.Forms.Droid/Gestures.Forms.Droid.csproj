@@ -48,6 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Effects\RecognizerPlatformEffect.cs" />
+    <Compile Include="Platform.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="..\..\SolutionInfo.cs">
       <Link>SolutionInfo.cs</Link>

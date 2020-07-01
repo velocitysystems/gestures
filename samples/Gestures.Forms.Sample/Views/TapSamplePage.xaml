@@ -10,7 +10,7 @@
                 <gestures:RecognizerEffect />
             </ContentView.Effects>
             <ContentView.GestureRecognizers>
-                <gestures:TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OnFrameTapped" />
+                <gestures:TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OnFrameTapped" TouchesBegan="OnFrameTouchesBegan" TouchesEnded="OnFrameTouchesEnded" />
             </ContentView.GestureRecognizers>
             <Label Text="Tap anywhere on the page." VerticalOptions="Center" HorizontalOptions="Center" />
         </ContentView>

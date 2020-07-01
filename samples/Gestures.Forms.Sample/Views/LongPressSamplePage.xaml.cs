@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-
+using System.Diagnostics;
 using Xamarin.Forms;
 
 namespace Velocity.Gestures.Forms.Sample.Views
@@ -12,9 +11,8 @@ namespace Velocity.Gestures.Forms.Sample.Views
             InitializeComponent();
         }
 
-        void OnFrameLongPressed(object sender, EventArgs e)
-        {
-            DisplayAlert("Long Pressed", "You long-pressed.", "OK");
-        }
+        void OnFrameLongPressed(object sender, EventArgs e) => DisplayAlert("Long Pressed", "You long-pressed.", "OK");
+        void OnFrameTouchesBegan(object sender, Point e) => Debug.WriteLine($"Touches Began: {e.X},{e.Y}");
+        void OnFrameTouchesEnded(object sender, Point e) => Debug.WriteLine($"Touches Ended: {e.X},{e.Y}");
     }
 }

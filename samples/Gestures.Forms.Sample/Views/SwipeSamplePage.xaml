@@ -10,7 +10,7 @@
                 <gestures:RecognizerEffect />
             </ContentView.Effects>
             <ContentView.GestureRecognizers>
-                <gestures:SwipeGestureRecognizer Swiped="OnFrameSwiped" />
+                <gestures:SwipeGestureRecognizer Swiped="OnFrameSwiped" TouchesBegan="OnFrameTouchesBegan" TouchesEnded="OnFrameTouchesEnded" />
             </ContentView.GestureRecognizers>
             <Label Text="Swipe anywhere on the page." VerticalOptions="Center" HorizontalOptions="Center" />
         </ContentView>

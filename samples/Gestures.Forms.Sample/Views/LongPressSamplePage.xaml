@@ -10,7 +10,7 @@
                 <gestures:RecognizerEffect />
             </ContentView.Effects>
             <ContentView.GestureRecognizers>
-                <gestures:LongPressGestureRecognizer LongPressed="OnFrameLongPressed" />
+                <gestures:LongPressGestureRecognizer LongPressed="OnFrameLongPressed" TouchesBegan="OnFrameTouchesBegan" TouchesEnded="OnFrameTouchesEnded" />
             </ContentView.GestureRecognizers>
             <Label Text="Long-press anywhere on the page." VerticalOptions="Center" HorizontalOptions="Center" />
         </ContentView>

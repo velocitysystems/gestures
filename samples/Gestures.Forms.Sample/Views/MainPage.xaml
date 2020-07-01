@@ -4,8 +4,10 @@
             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
             mc:Ignorable="d"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             xmlns:views="clr-namespace:Velocity.Gestures.Forms.Sample.Views"
-            x:Class="Velocity.Gestures.Forms.Sample.Views.MainPage">
+            x:Class="Velocity.Gestures.Forms.Sample.Views.MainPage"
+            android:TabbedPage.IsSwipePagingEnabled="False">
 
     <TabbedPage.Children>
         <NavigationPage Title="Tap">

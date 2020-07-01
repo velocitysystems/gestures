@@ -10,7 +10,7 @@
                 <gestures:RecognizerEffect />
             </ContentView.Effects>
             <ContentView.GestureRecognizers>
-                <gestures:PinchGestureRecognizer Pinching="OnFramePinching" />
+                <gestures:PinchGestureRecognizer Pinching="OnFramePinching" TouchesBegan="OnFrameTouchesBegan" TouchesEnded="OnFrameTouchesEnded" />
             </ContentView.GestureRecognizers>
             <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
                 <Label Text="Pinch anywhere on the page." />
