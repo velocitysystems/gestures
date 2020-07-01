@@ -1,6 +1,8 @@
 # gestures
 Cross-platform, multi-touch gesture recognition for Android, iOS, macOS, UWP and WPF.
 
+[![Build Status](https://dev.azure.com/velocitysystems/gestures/_apis/build/status/velocitysystems.gestures?branchName=master)](https://dev.azure.com/velocitysystems/gestures/_build/latest?definitionId=1&branchName=master)
+
 **Xamarin (.NET Standard)**
 |Type|Android|iOS|macOS|
 |---|---|---|---|
