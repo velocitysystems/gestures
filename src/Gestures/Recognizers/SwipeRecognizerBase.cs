@@ -22,9 +22,9 @@ namespace Velocity.Gestures
         /// Initializes a new instance of the <see cref="SwipeRecognizerBase{TView}"/> class.
         /// </summary>
         /// <param name="view">The native view.</param>
-        /// <param name="numberOfTouchesRequired">The number of touches required.</param>
         /// <param name="directionMask">The direction mask.</param>
-        protected SwipeRecognizerBase(TView view, int numberOfTouchesRequired, SwipeDirection directionMask) : base(view, numberOfTouchesRequired)
+        /// <param name="numberOfTouchesRequired">The number of touches required.</param>
+        protected SwipeRecognizerBase(TView view, SwipeDirection directionMask, int numberOfTouchesRequired) : base(view, numberOfTouchesRequired)
         {
             DirectionMask = directionMask;
 

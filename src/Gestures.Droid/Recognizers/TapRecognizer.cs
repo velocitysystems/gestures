@@ -19,9 +19,9 @@ namespace Velocity.Gestures.Droid
         /// </summary>
         /// <param name="context">The application context.</param>
         /// <param name="view">The native view.</param>
-        /// <param name="numberOfTouchesRequired">Optional number of touches required.</param>
         /// <param name="numberOfTapsRequired">Optional number of taps required.</param>
-        public TapRecognizer(Context context, View view, int numberOfTouchesRequired = 1, int numberOfTapsRequired = 1) : base(view, numberOfTouchesRequired, numberOfTapsRequired)
+        /// <param name="numberOfTouchesRequired">Optional number of touches required.</param>
+        public TapRecognizer(Context context, View view, int numberOfTapsRequired = 1, int numberOfTouchesRequired = 1) : base(view, numberOfTapsRequired, numberOfTouchesRequired)
         {
             _recognizer = new NativeTapGestureRecognizer(context, this);
             view.SetOnTouchListener(_recognizer);

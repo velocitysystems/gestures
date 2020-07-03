@@ -53,7 +53,7 @@ namespace Velocity.Gestures.Forms.MacOS
                 switch (recognizer)
                 {
                     case VTapGestureRecognizer formsTapRecognizer:
-                        var tapRecognizer = new TapRecognizer(Container, formsTapRecognizer.NumberOfTouchesRequired, formsTapRecognizer.NumberOfTapsRequired);
+                        var tapRecognizer = new TapRecognizer(Container, formsTapRecognizer.NumberOfTapsRequired, formsTapRecognizer.NumberOfTouchesRequired);
                         tapRecognizer.Tapped.Subscribe(e => formsTapRecognizer.InvokeTapped(view)).DisposeWith(_disposable);
                         tapRecognizer.TouchesBegan.Subscribe(point => formsTapRecognizer.InvokeTouchesBegan(view, point)).DisposeWith(_disposable);
                         tapRecognizer.TouchesEnded.Subscribe(point => formsTapRecognizer.InvokeTouchesEnded(view, point)).DisposeWith(_disposable);

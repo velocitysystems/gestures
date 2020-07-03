@@ -21,7 +21,8 @@ namespace Velocity.Gestures.iOS
         /// </summary>
         /// <param name="view">The native view.</param>
         /// <param name="directionMask">Optional swipe direction mask.</param>
-        public SwipeRecognizer(UIView view, SwipeDirection directionMask = SwipeDirection.Any) : base(view, 1, directionMask)
+        /// <param name="numberOfTouchesRequired">Optional number of touches required.</param>
+        public SwipeRecognizer(UIView view, SwipeDirection directionMask = SwipeDirection.Any, int numberOfTouchesRequired = 1) : base(view, directionMask, numberOfTouchesRequired)
         {
             _recognizers = new List<UISwipeGestureRecognizer>();
 
@@ -72,8 +73,8 @@ namespace Velocity.Gestures.iOS
                 _recognizer = recognizer;
 
                 CancelsTouchesInView = false;
-                NumberOfTouchesRequired = (nuint)recognizer.NumberOfTouchesRequired;
                 Direction = direction;
+                NumberOfTouchesRequired = (nuint)recognizer.NumberOfTouchesRequired;
                 ShouldReceiveTouch += (UIGestureRecognizer r, UITouch touch) => touch.View == recognizer.View;
 
                 AddTarget(() => recognizer.OnSwiped(direction.ToSwipeDirection()));

@@ -17,9 +17,9 @@ namespace Velocity.Gestures.MacOS
         /// Initializes a new instance of the <see cref="TapRecognizer"/> class.
         /// </summary>
         /// <param name="view">The native view.</param>
-        /// <param name="numberOfTouchesRequired">Optional number of touches required.</param>
         /// <param name="numberOfTapsRequired">Optional number of taps required.</param>
-        public TapRecognizer(NSView view, int numberOfTouchesRequired = 1, int numberOfTapsRequired = 1) : base(view, numberOfTouchesRequired, numberOfTapsRequired)
+        /// <param name="numberOfTouchesRequired">Optional number of touches required.</param>
+        public TapRecognizer(NSView view, int numberOfTapsRequired = 1, int numberOfTouchesRequired = 1) : base(view, numberOfTapsRequired, numberOfTouchesRequired)
         {
             _recognizer = new NativeTapGestureRecognizer(this);
             view.AddGestureRecognizer(_recognizer);
@@ -35,8 +35,8 @@ namespace Velocity.Gestures.MacOS
         {
             public NativeTapGestureRecognizer(TapRecognizer recognizer) : base(() => recognizer.OnTapped())
             {
-                NumberOfTouchesRequired = recognizer.NumberOfTouchesRequired;
                 NumberOfClicksRequired = recognizer.NumberOfTapsRequired;
+                NumberOfTouchesRequired = recognizer.NumberOfTouchesRequired;                
             }
         }
     }

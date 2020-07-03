@@ -23,9 +23,9 @@ namespace Velocity.Gestures
         /// Initializes a new instance of the <see cref="TapRecognizerBase{TView}"/> class.
         /// </summary>
         /// <param name="view">The native view.</param>
-        /// <param name="numberOfTouchesRequired">The number of touches required.</param>
         /// <param name="numberOfTapsRequired">The number of taps required.</param>
-        protected TapRecognizerBase(TView view, int numberOfTouchesRequired, int numberOfTapsRequired) : base(view, numberOfTouchesRequired)
+        /// <param name="numberOfTouchesRequired">The number of touches required.</param>
+        protected TapRecognizerBase(TView view, int numberOfTapsRequired, int numberOfTouchesRequired) : base(view, numberOfTouchesRequired)
         {
             NumberOfTapsRequired = numberOfTapsRequired;
 

@@ -10,6 +10,12 @@
             android:TabbedPage.IsSwipePagingEnabled="False">
 
     <TabbedPage.Children>
+        <NavigationPage Title="Sandbox">
+            <x:Arguments>
+                <views:SandboxSamplePage />
+            </x:Arguments>
+        </NavigationPage>
+        
         <NavigationPage Title="Tap">
             <x:Arguments>
                 <views:TapSamplePage />

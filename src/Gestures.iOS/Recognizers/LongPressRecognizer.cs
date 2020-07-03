@@ -2,6 +2,7 @@
 //     Copyright (c) 2020 Velocity Systems
 // </copyright>
 
+using System;
 using Foundation;
 using UIKit;
 
@@ -40,6 +41,7 @@ namespace Velocity.Gestures.iOS
                 _recognizer = recognizer;
 
                 CancelsTouchesInView = false;
+                NumberOfTouchesRequired = (nuint)recognizer.NumberOfTouchesRequired;
                 ShouldReceiveTouch += (UIGestureRecognizer r, UITouch touch) => touch.View == recognizer.View;
 
                 AddTarget(() =>

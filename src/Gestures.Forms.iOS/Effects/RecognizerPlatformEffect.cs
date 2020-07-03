@@ -53,7 +53,7 @@ namespace Velocity.Gestures.Forms.iOS
                 switch (recognizer)
                 {
                     case VTapGestureRecognizer formsTapRecognizer:
-                        var tapRecognizer = new TapRecognizer(Container, formsTapRecognizer.NumberOfTouchesRequired, formsTapRecognizer.NumberOfTapsRequired);
+                        var tapRecognizer = new TapRecognizer(Container, formsTapRecognizer.NumberOfTapsRequired, formsTapRecognizer.NumberOfTouchesRequired);
                         tapRecognizer.Tapped.Subscribe(e => formsTapRecognizer.InvokeTapped(view)).DisposeWith(_disposable);
                         tapRecognizer.TouchesBegan.Subscribe(point => formsTapRecognizer.InvokeTouchesBegan(view, point)).DisposeWith(_disposable);
                         tapRecognizer.TouchesEnded.Subscribe(point => formsTapRecognizer.InvokeTouchesEnded(view, point)).DisposeWith(_disposable);
@@ -69,7 +69,7 @@ namespace Velocity.Gestures.Forms.iOS
                         break;
 
                     case VSwipeGestureRecognizer formsSwipeRecognizer:
-                        var swipeRecognizer = new SwipeRecognizer(Container, formsSwipeRecognizer.DirectionMask);
+                        var swipeRecognizer = new SwipeRecognizer(Container, formsSwipeRecognizer.DirectionMask, formsSwipeRecognizer.NumberOfTouchesRequired);
                         swipeRecognizer.Swiped.Subscribe(e => formsSwipeRecognizer.InvokeSwiped(view, e)).DisposeWith(_disposable);
                         swipeRecognizer.TouchesBegan.Subscribe(point => formsSwipeRecognizer.InvokeTouchesBegan(view, point)).DisposeWith(_disposable);
                         swipeRecognizer.TouchesEnded.Subscribe(point => formsSwipeRecognizer.InvokeTouchesEnded(view, point)).DisposeWith(_disposable);

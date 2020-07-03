@@ -14,8 +14,22 @@ namespace Velocity.Gestures.Forms
         /// <summary>
         /// Initializes a new instance of the <see cref="TapEventArgs"/> class.
         /// </summary>
-        internal TapEventArgs()
+        /// <param name="numberOfTouches">The number of touches received.</param>
+        /// <param name="numberOfTaps">The number of taps received.</param>
+        internal TapEventArgs(int numberOfTouches, int numberOfTaps)
         {
+            NumberOfTouches = numberOfTouches;
+            NumberOfTaps = numberOfTaps;
         }
+
+        /// <summary>
+        /// Gets the number of touches received.
+        /// </summary>
+        public int NumberOfTouches { get; }
+
+        /// <summary>
+        /// Gets the number of taps received.
+        /// </summary>
+        public int NumberOfTaps { get; }
     }
 }

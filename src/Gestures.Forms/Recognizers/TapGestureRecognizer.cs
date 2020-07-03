@@ -42,7 +42,7 @@ namespace Velocity.Gestures.Forms
         /// <param name="sender">The sender.</param>
         internal void InvokeTapped(View sender)
         {
-            Tapped?.Invoke(sender, new TapEventArgs());
+            Tapped?.Invoke(sender, new TapEventArgs(NumberOfTouchesRequired, NumberOfTapsRequired));
             if (Command is ICommand cmd && cmd.CanExecute(CommandParameter))
             {
                 cmd.Execute(CommandParameter);
