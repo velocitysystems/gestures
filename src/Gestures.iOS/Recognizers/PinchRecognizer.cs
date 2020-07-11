@@ -10,7 +10,7 @@ namespace Velocity.Gestures.iOS
     /// <summary>
     /// A multi-touch pinch gesture recognizer.
     /// </summary>
-    public class PinchRecognizer : PinchRecognizerBase<UIView>
+    public class PinchRecognizer : PlatformPinchRecognizer<UIView>
     {
         private readonly UIPinchGestureRecognizer _recognizer;
 

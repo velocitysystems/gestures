@@ -2,13 +2,17 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:gestures="clr-namespace:Velocity.Gestures.Forms;assembly=Velocity.Gestures.Forms"
     x:Class="Velocity.Gestures.Forms.Sample.Views.SandboxSamplePage">
 
     <ContentPage.Resources>
         <Style TargetType="Frame">
             <Setter Property="Margin" Value="0, 20, 0, 0" />
             <Setter Property="Padding" Value="10" />
+        </Style>
+        <Style x:Key="ContainerStyle" TargetType="StackLayout">
+            <Setter Property="BackgroundColor" Value="LightGray" />
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="Spacing" Value="0" />
         </Style>
     </ContentPage.Resources>
 
@@ -21,58 +25,73 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20*" />
-            <RowDefinition Height="80*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
         <Frame Grid.Column="0">
-            <StackLayout Spacing="0">
-                <Label Text="Tap" FontSize="Header" />
-                <CheckBox x:Name="TapEnabled" IsChecked="True" />
+            <StackLayout Style="{StaticResource ContainerStyle}">
+                <Label Text="Tap" FontAttributes="Bold" />
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Taps" FontSize="Small" VerticalOptions="Center"></Label>
-                    <Entry x:Name="TapNumberOfTaps" Text="1" HorizontalOptions="End" />
+                    <Label Text="Enabled" VerticalOptions="Center"></Label>
+                    <CheckBox x:Name="TapEnabled" IsChecked="True" HorizontalOptions="EndAndExpand" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Touches" FontSize="Small" VerticalOptions="Center"></Label>
-                    <Entry x:Name="TapNumberOfTouches" Text="1" HorizontalOptions="End" />
+                    <Label Text="Taps" VerticalOptions="Center"></Label>
+                    <Entry x:Name="TapNumberOfTaps" Text="1" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Touches" VerticalOptions="Center"></Label>
+                    <Entry x:Name="TapNumberOfTouches" Text="1" HorizontalOptions="EndAndExpand" />
                 </StackLayout>
             </StackLayout>
         </Frame>
         <Frame Grid.Column="1">
-            <StackLayout Spacing="0">
-                <Label Text="Long Press" FontSize="Header" />
-                <CheckBox x:Name="LongPressEnabled" IsChecked="True" />
+            <StackLayout Style="{StaticResource ContainerStyle}">
+                <Label Text="Long Press" FontAttributes="Bold" />
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Touches" FontSize="Small" VerticalOptions="Center"></Label>
-                    <Entry x:Name="LongPressNumberOfTouches" Text="1" HorizontalOptions="End" />
+                    <Label Text="Enabled" VerticalOptions="Center"></Label>
+                    <CheckBox x:Name="LongPressEnabled" IsChecked="True" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Touches" VerticalOptions="Center"></Label>
+                    <Entry x:Name="LongPressNumberOfTouches" Text="1" HorizontalOptions="EndAndExpand" />
                 </StackLayout>
             </StackLayout>
         </Frame>
         <Frame Grid.Column="2">
-            <StackLayout Spacing="0">
-                <Label Text="Swipe" FontSize="Header" />
-                <CheckBox x:Name="SwipeEnabled" IsChecked="True" />
+            <StackLayout Style="{StaticResource ContainerStyle}">
+                <Label Text="Swipe" FontAttributes="Bold" />
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Touches" FontSize="Small" VerticalOptions="Center"></Label>
-                    <Entry x:Name="SwipeNumberOfTouches" Text="1" HorizontalOptions="End" />
+                    <Label Text="Enabled" VerticalOptions="Center"></Label>
+                    <CheckBox x:Name="SwipeEnabled" IsChecked="True" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Touches" VerticalOptions="Center"></Label>
+                    <Entry x:Name="SwipeNumberOfTouches" Text="1" HorizontalOptions="EndAndExpand" />
                 </StackLayout>
             </StackLayout>
         </Frame>
         <Frame Grid.Column="3">
-            <StackLayout Spacing="0">
-                <Label Text="Pan" FontSize="Header" />
-                <CheckBox x:Name="PanEnabled" />  
+            <StackLayout Style="{StaticResource ContainerStyle}">
+                <Label Text="Pan" FontAttributes="Bold" />
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Enabled" VerticalOptions="Center"></Label>
+                    <CheckBox x:Name="PanEnabled" IsChecked="True" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
             </StackLayout>
         </Frame>
         <Frame Grid.Column="4">
-            <StackLayout Spacing="0">
-                <Label Text="Pinch" FontSize="Header" />
-                <CheckBox x:Name="PinchEnabled" />  
+            <StackLayout Style="{StaticResource ContainerStyle}">
+                <Label Text="Pinch" FontAttributes="Bold" />
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Enabled" VerticalOptions="Center"></Label>
+                    <CheckBox x:Name="PinchEnabled" IsChecked="True" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
             </StackLayout>
         </Frame>
 
-        <ContentView x:Name="GestureView" Grid.Row="1" Grid.ColumnSpan="5">
+        <ContentView x:Name="GestureView" Grid.Row="1" Grid.ColumnSpan="5" BackgroundColor="White">
             <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
                 <Label Text="Gesture anywhere on the page." />
                 <Label x:Name="GestureStatus" />

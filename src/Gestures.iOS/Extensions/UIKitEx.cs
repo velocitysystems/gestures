@@ -1,4 +1,4 @@
-﻿// <copyright file="UIKitExtensions.cs" company="Velocity Systems">
+﻿// <copyright file="UIKitEx.cs" company="Velocity Systems">
 //     Copyright (c) 2020 Velocity Systems
 // </copyright>
 
@@ -10,7 +10,7 @@ namespace Velocity.Gestures.iOS
     /// <summary>
     /// Extensions for <see cref="UIKit"/>.
     /// </summary>
-    public static class UIKitExtensions
+    public static class UIKitEx
     {
         /// <summary>
         /// Convert to a <see cref="SwipeDirection"/>.

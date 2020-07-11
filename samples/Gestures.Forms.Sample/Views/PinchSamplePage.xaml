@@ -5,7 +5,7 @@
     xmlns:gestures="clr-namespace:Velocity.Gestures.Forms;assembly=Velocity.Gestures.Forms"
     x:Class="Velocity.Gestures.Forms.Sample.Views.PinchSamplePage">
     <Grid>
-        <ContentView>
+        <ContentView BackgroundColor="White">
             <ContentView.Effects>
                 <gestures:RecognizerEffect />
             </ContentView.Effects>

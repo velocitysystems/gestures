@@ -9,25 +9,24 @@
 
 namespace Velocity.Gestures.Forms.Droid
 {
-    using System;
     using System.Reactive.Disposables;
     using Android.Content;
-    using Velocity.Gestures;
     using Velocity.Gestures.Droid;
     using Xamarin.Forms;
     using Xamarin.Forms.Platform.Android;
-    using VLongPressGestureRecognizer = Velocity.Gestures.Forms.LongPressGestureRecognizer;
-    using VPanGestureRecognizer = Velocity.Gestures.Forms.PanGestureRecognizer;
-    using VPinchGestureRecognizer = Velocity.Gestures.Forms.PinchGestureRecognizer;
-    using VSwipeGestureRecognizer = Velocity.Gestures.Forms.SwipeGestureRecognizer;
-    using VTapGestureRecognizer = Velocity.Gestures.Forms.TapGestureRecognizer;
+    using FormsLongPressGestureRecognizer = Velocity.Gestures.Forms.LongPressGestureRecognizer;
+    using FormsPanGestureRecognizer = Velocity.Gestures.Forms.PanGestureRecognizer;
+    using FormsPinchGestureRecognizer = Velocity.Gestures.Forms.PinchGestureRecognizer;
+    using FormsSwipeGestureRecognizer = Velocity.Gestures.Forms.SwipeGestureRecognizer;
+    using FormsTapGestureRecognizer = Velocity.Gestures.Forms.TapGestureRecognizer;
 
     /// <summary>
     /// Platform implementation for <see cref="RecognizerEffect"/>.
     /// </summary>
     public class RecognizerPlatformEffect : PlatformEffect
     {
-        private CompositeDisposable _disposable;
+        private readonly CompositeDisposable _disposable = new CompositeDisposable();
+
         private Context Context => Android.App.Application.Context;
 
         /// <summary>
@@ -48,35 +47,22 @@ namespace Velocity.Gestures.Forms.Droid
                 return;
             }
 
-            _disposable = new CompositeDisposable();
-
             foreach (var recognizer in view.GestureRecognizers)
             {
                 switch (recognizer)
                 {
-                    case VTapGestureRecognizer formsTapRecognizer:
-                        var tapRecognizer = new TapRecognizer(Context, Container, formsTapRecognizer.NumberOfTapsRequired, formsTapRecognizer.NumberOfTouchesRequired);
-                        tapRecognizer.Tapped.Subscribe(e => formsTapRecognizer.InvokeTapped(view)).DisposeWith(_disposable);
-                        tapRecognizer.TouchesBegan.Subscribe(point => formsTapRecognizer.InvokeTouchesBegan(view, point)).DisposeWith(_disposable);
-                        tapRecognizer.TouchesEnded.Subscribe(point => formsTapRecognizer.InvokeTouchesEnded(view, point)).DisposeWith(_disposable);
-                        _disposable.Add(tapRecognizer);
+                    case FormsTapGestureRecognizer tap:
+                        _disposable.Add(new TapRecognizer(Context, Container, tap.NumberOfTapsRequired, tap.NumberOfTouchesRequired).Bind(tap, view, _disposable));
                         break;
 
-                    case VLongPressGestureRecognizer formsLongPressRecognizer:
-                        var longPressRecognizer = new LongPressRecognizer(Context, Container, formsLongPressRecognizer.NumberOfTouchesRequired);
-                        longPressRecognizer.LongPressed.Subscribe(e => formsLongPressRecognizer.InvokeLongPressed(view)).DisposeWith(_disposable);
-                        longPressRecognizer.TouchesBegan.Subscribe(point => formsLongPressRecognizer.InvokeTouchesBegan(view, point)).DisposeWith(_disposable);
-                        longPressRecognizer.TouchesEnded.Subscribe(point => formsLongPressRecognizer.InvokeTouchesEnded(view, point)).DisposeWith(_disposable);
-                        _disposable.Add(longPressRecognizer);
+                    case FormsLongPressGestureRecognizer longPress:
+                        _disposable.Add(new LongPressRecognizer(Context, Container, longPress.NumberOfTouchesRequired).Bind(longPress, view, _disposable));
                         break;
-                }                             
+                }
             }
         }
 
         /// <inheritdoc/>
-        protected override void OnDetached()
-        {
-            _disposable?.Dispose();
-        }
+        protected override void OnDetached() => _disposable?.Dispose();
     }
 }

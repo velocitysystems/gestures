@@ -10,7 +10,7 @@ namespace Velocity.Gestures.WPF
     /// <summary>
     /// A multi-touch tap gesture recognizer.
     /// </summary>
-    public class TapRecognizer : TapRecognizerBase<FrameworkElement>
+    public class TapRecognizer : PlatformTapRecognizer<FrameworkElement>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TapRecognizer"/> class.
@@ -18,7 +18,7 @@ namespace Velocity.Gestures.WPF
         /// <param name="view">The native view.</param>
         /// <param name="numberOfTapsRequired">Optional number of taps required.</param>
         /// <param name="numberOfTouchesRequired">Optional number of touches required.</param>
-        public TapRecognizer(FrameworkElement view, int numberOfTapsRequired = 1), int numberOfTouchesRequired = 1 : base(view, numberOfTapsRequired, numberOfTouchesRequired)
+        public TapRecognizer(FrameworkElement view, int numberOfTapsRequired = 1, int numberOfTouchesRequired = 1) : base(view, numberOfTapsRequired, numberOfTouchesRequired)
         {
             View.MouseLeftButtonDown += OnViewMouseLeftButtonDown;
         }

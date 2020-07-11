@@ -62,7 +62,7 @@
     <Compile Include="Recognizers\PinchRecognizer.cs" />
     <Compile Include="Recognizers\SwipeRecognizer.cs" />
     <Compile Include="Recognizers\TapRecognizer.cs" />
-    <Compile Include="Extensions\UIKitExtensions.cs" />
+    <Compile Include="Extensions\UIKitEx.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gestures\Gestures.csproj">

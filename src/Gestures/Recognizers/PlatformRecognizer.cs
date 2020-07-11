@@ -1,4 +1,4 @@
-﻿// <copyright file="RecognizerBase.cs" company="Velocity Systems">
+﻿// <copyright file="PlatformRecognizer.cs" company="Velocity Systems">
 //     Copyright (c) 2020 Velocity Systems
 // </copyright>
 
@@ -14,17 +14,17 @@ namespace Velocity.Gestures
     /// </summary>
     /// <typeparam name="TView">The native view.</typeparam>
     [EditorBrowsable(EditorBrowsableState.Never)]
-    public abstract class RecognizerBase<TView> : IRecognizer<TView> where TView : class
+    public abstract class PlatformRecognizer<TView> : IRecognizer<TView> where TView : class
     {
         private readonly ISubject<Point> _touchesBeganSubject;
         private readonly ISubject<Point> _touchesEndedSubject;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RecognizerBase{TView}"/> class.
+        /// Initializes a new instance of the <see cref="PlatformRecognizer{TView}"/> class.
         /// </summary>
         /// <param name="view">The native view.</param>
         /// <param name="numberOfTouchesRequired">The number of touches required.</param>
-        protected RecognizerBase(TView view, int numberOfTouchesRequired)
+        protected PlatformRecognizer(TView view, int numberOfTouchesRequired)
         {
             View = view ?? throw new ArgumentNullException(nameof(view));
             NumberOfTouchesRequired = numberOfTouchesRequired;

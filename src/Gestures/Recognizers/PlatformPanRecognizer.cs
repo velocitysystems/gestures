@@ -1,4 +1,4 @@
-﻿// <copyright file="PanRecognizerBase.cs" company="Velocity Systems">
+﻿// <copyright file="PlatformPanRecognizer.cs" company="Velocity Systems">
 //     Copyright (c) 2020 Velocity Systems
 // </copyright>
 
@@ -14,15 +14,15 @@ namespace Velocity.Gestures
     /// </summary>
     /// <typeparam name="TView">The native view.</typeparam>
     [EditorBrowsable(EditorBrowsableState.Never)]
-    public abstract class PanRecognizerBase<TView> : RecognizerBase<TView>, IPanRecognizer<TView> where TView : class
+    public abstract class PlatformPanRecognizer<TView> : PlatformRecognizer<TView>, IPanRecognizer<TView> where TView : class
     {
         private readonly Subject<PanEvent> _panningSubject;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PanRecognizerBase{TView}"/> class.
+        /// Initializes a new instance of the <see cref="PlatformPanRecognizer{TView}"/> class.
         /// </summary>
         /// <param name="view">The native view.</param>
-        protected PanRecognizerBase(TView view) : base(view, 1)
+        protected PlatformPanRecognizer(TView view) : base(view, 1)
         {
             _panningSubject = new Subject<PanEvent>();
             Panning = _panningSubject.AsObservable();

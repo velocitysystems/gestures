@@ -10,7 +10,7 @@ namespace Velocity.Gestures.UWP
     /// <summary>
     /// A multi-touch long-press gesture recognizer.
     /// </summary>
-    public class LongPressRecognizer : LongPressRecognizerBase<FrameworkElement>
+    public class LongPressRecognizer : PlatformLongPressRecognizer<FrameworkElement>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="LongPressRecognizer"/> class.

@@ -11,7 +11,7 @@ namespace Velocity.Gestures.iOS
     /// <summary>
     /// A multi-touch tap gesture recognizer.
     /// </summary>
-    public class TapRecognizer : TapRecognizerBase<UIView>
+    public class TapRecognizer : PlatformTapRecognizer<UIView>
     {
         private readonly UITapGestureRecognizer _recognizer;
 

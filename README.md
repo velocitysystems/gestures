@@ -7,10 +7,10 @@ Cross-platform, multi-touch gesture recognition for Android, iOS, macOS, UWP and
 |Type|Android|iOS|macOS|
 |---|---|---|---|
 |`TapRecognizer`|✅|✅|✅|
-|`LongPressRecognizer`|✅|✅|❌|
-|`SwipeRecognizer`|❌|✅|❌|
-|`PanRecognizer`|❌|✅|❌|
-|`PinchRecognizer`|❌|✅|❌|
+|`LongPressRecognizer`|✅|✅|✅|
+|`SwipeRecognizer`|❌|✅|✅|
+|`PanRecognizer`|❌|✅|✅|
+|`PinchRecognizer`|❌|✅|✅|
 
 **Windows (.NET Standard)**
 |Type|UWP|WPF|
@@ -25,7 +25,14 @@ Cross-platform, multi-touch gesture recognition for Android, iOS, macOS, UWP and
 |Type|Android|iOS|macOS|UWP|WPF|
 |---|---|---|---|---|---|
 |`TapGestureRecognizer`|✅|✅|✅|✅|✅|
-|`LongPressGestureRecognizer`|✅|✅|❌|✅|✅|
-|`SwipeGestureRecognizer`|❌|✅|❌|❌|❌|
-|`PanGestureRecognizer`|❌|✅|❌|❌|❌|
-|`PinchGestureRecognizer`|❌|✅|❌|❌|❌|
+|`LongPressGestureRecognizer`|✅|✅|✅|✅|✅|
+|`SwipeGestureRecognizer`|❌|✅|✅|❌|❌|
+|`PanGestureRecognizer`|❌|✅|✅|❌|❌|
+|`PinchGestureRecognizer`|❌|✅|✅|❌|❌|
+
+**UWP**
+1. Long-press gesture recognizer is triggered by a right-click.
+
+**WPF**
+1. For gestures to fire correctly in Xamarin.Forms, they must be attached to a View where the BackgroundColor is opaque (not transparent).
+2. Long-press gesture recognizer is triggered by a right-click.

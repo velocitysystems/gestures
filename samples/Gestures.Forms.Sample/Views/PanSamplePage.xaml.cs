@@ -14,12 +14,14 @@ namespace Velocity.Gestures.Forms.Sample.Views
 
         void OnFramePanning(object sender, PanEventArgs e)
         {
-            PanningStatus.Text = $"{e.TotalX},{e.TotalY}";
             if (e.State == GestureState.Ended)
             {
                 DisplayAlert("Panned", $"You panned.", "OK");
                 PanningStatus.Text = "";
+                return;
             }
+
+            PanningStatus.Text = $"{e.TotalX},{e.TotalY}";
         }
 
         void OnFrameTouchesBegan(object sender, Point e) => Debug.WriteLine($"Touches Began: {e.X},{e.Y}");

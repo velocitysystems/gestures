@@ -10,7 +10,7 @@ namespace Velocity.Gestures.Droid
     /// <summary>
     /// A multi-touch long-press gesture recognizer.
     /// </summary>
-    public class LongPressRecognizer : LongPressRecognizerBase<View>
+    public class LongPressRecognizer : PlatformLongPressRecognizer<View>
     {
         private readonly NativeLongPressGestureRecognizer _recognizer;
 

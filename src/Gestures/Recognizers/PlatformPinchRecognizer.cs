@@ -1,4 +1,4 @@
-﻿// <copyright file="PinchRecognizerBase.cs" company="Velocity Systems">
+﻿// <copyright file="PlatformPinchRecognizer.cs" company="Velocity Systems">
 //     Copyright (c) 2020 Velocity Systems
 // </copyright>
 
@@ -14,15 +14,15 @@ namespace Velocity.Gestures
     /// </summary>
     /// <typeparam name="TView">The native view.</typeparam>
     [EditorBrowsable(EditorBrowsableState.Never)]
-    public abstract class PinchRecognizerBase<TView> : RecognizerBase<TView>, IPinchRecognizer<TView> where TView : class
+    public abstract class PlatformPinchRecognizer<TView> : PlatformRecognizer<TView>, IPinchRecognizer<TView> where TView : class
     {
         private readonly Subject<PinchEvent> _pinchingSubject;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PinchRecognizerBase{TView}"/> class.
+        /// Initializes a new instance of the <see cref="PlatformPinchRecognizer{TView}"/> class.
         /// </summary>
         /// <param name="view">The native view.</param>
-        protected PinchRecognizerBase(TView view) : base(view, 2)
+        protected PlatformPinchRecognizer(TView view) : base(view, 2)
         {
             _pinchingSubject = new Subject<PinchEvent>();
             Pinching = _pinchingSubject.AsObservable();

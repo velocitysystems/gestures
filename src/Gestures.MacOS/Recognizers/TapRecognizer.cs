@@ -2,6 +2,7 @@
 //     Copyright (c) 2020 Velocity Systems
 // </copyright>
 
+using System;
 using AppKit;
 
 namespace Velocity.Gestures.MacOS
@@ -9,7 +10,7 @@ namespace Velocity.Gestures.MacOS
     /// <summary>
     /// A multi-touch tap gesture recognizer.
     /// </summary>
-    public class TapRecognizer : TapRecognizerBase<NSView>
+    public class TapRecognizer : PlatformTapRecognizer<NSView>
     {
         private readonly NSClickGestureRecognizer _recognizer;
 
@@ -21,8 +22,17 @@ namespace Velocity.Gestures.MacOS
         /// <param name="numberOfTouchesRequired">Optional number of touches required.</param>
         public TapRecognizer(NSView view, int numberOfTapsRequired = 1, int numberOfTouchesRequired = 1) : base(view, numberOfTapsRequired, numberOfTouchesRequired)
         {
-            _recognizer = new NativeTapGestureRecognizer(this);
+            _recognizer = new NativeTapGestureRecognizer(this, OnClicking);
             view.AddGestureRecognizer(_recognizer);
+
+            void OnClicking(NSClickGestureRecognizer recognizer)
+            {
+                var point = recognizer.LocationInView(View);
+
+                OnTouchesBegan(point.X, point.Y);
+                OnTapped();
+                OnTouchesEnded(point.X, point.Y);                
+            }
         }
 
         /// <inheritdoc/>
@@ -33,7 +43,7 @@ namespace Velocity.Gestures.MacOS
 
         private class NativeTapGestureRecognizer : NSClickGestureRecognizer
         {
-            public NativeTapGestureRecognizer(TapRecognizer recognizer) : base(() => recognizer.OnTapped())
+            public NativeTapGestureRecognizer(TapRecognizer recognizer, Action<NSClickGestureRecognizer> action) : base(action)
             {
                 NumberOfClicksRequired = recognizer.NumberOfTapsRequired;
                 NumberOfTouchesRequired = recognizer.NumberOfTouchesRequired;                

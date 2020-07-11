@@ -10,7 +10,7 @@ namespace Velocity.Gestures.Droid
     /// <summary>
     /// A multi-touch tap gesture recognizer.
     /// </summary>
-    public class TapRecognizer : TapRecognizerBase<View>
+    public class TapRecognizer : PlatformTapRecognizer<View>
     {
         private readonly NativeTapGestureRecognizer _recognizer;
 

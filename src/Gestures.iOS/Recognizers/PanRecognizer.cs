@@ -10,7 +10,7 @@ namespace Velocity.Gestures.iOS
     /// <summary>
     /// A multi-touch pan gesture recognizer.
     /// </summary>
-    public class PanRecognizer : PanRecognizerBase<UIView>
+    public class PanRecognizer : PlatformPanRecognizer<UIView>
     {
         private readonly UIPanGestureRecognizer _recognizer;
 

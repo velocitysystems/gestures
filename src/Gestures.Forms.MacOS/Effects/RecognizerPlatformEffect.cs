@@ -9,24 +9,22 @@
 
 namespace Velocity.Gestures.Forms.MacOS
 {
-    using System;
     using System.Reactive.Disposables;
-    using Velocity.Gestures;
     using Velocity.Gestures.MacOS;
     using Xamarin.Forms;
     using Xamarin.Forms.Platform.MacOS;
-    using VLongPressGestureRecognizer = Velocity.Gestures.Forms.LongPressGestureRecognizer;
-    using VPanGestureRecognizer = Velocity.Gestures.Forms.PanGestureRecognizer;
-    using VPinchGestureRecognizer = Velocity.Gestures.Forms.PinchGestureRecognizer;
-    using VSwipeGestureRecognizer = Velocity.Gestures.Forms.SwipeGestureRecognizer;
-    using VTapGestureRecognizer = Velocity.Gestures.Forms.TapGestureRecognizer;
+    using FormsLongPressGestureRecognizer = Velocity.Gestures.Forms.LongPressGestureRecognizer;
+    using FormsPanGestureRecognizer = Velocity.Gestures.Forms.PanGestureRecognizer;
+    using FormsPinchGestureRecognizer = Velocity.Gestures.Forms.PinchGestureRecognizer;
+    using FormsSwipeGestureRecognizer = Velocity.Gestures.Forms.SwipeGestureRecognizer;
+    using FormsTapGestureRecognizer = Velocity.Gestures.Forms.TapGestureRecognizer;
 
     /// <summary>
     /// Platform implementation for <see cref="RecognizerEffect"/>.
     /// </summary>
     public class RecognizerPlatformEffect : PlatformEffect
     {
-        private CompositeDisposable _disposable;
+        private readonly CompositeDisposable _disposable = new CompositeDisposable();
 
         /// <summary>
         /// Initialize the platform effect.
@@ -46,27 +44,34 @@ namespace Velocity.Gestures.Forms.MacOS
                 return;
             }
 
-            _disposable = new CompositeDisposable();
-
             foreach (var recognizer in view.GestureRecognizers)
             {
                 switch (recognizer)
                 {
-                    case VTapGestureRecognizer formsTapRecognizer:
-                        var tapRecognizer = new TapRecognizer(Container, formsTapRecognizer.NumberOfTapsRequired, formsTapRecognizer.NumberOfTouchesRequired);
-                        tapRecognizer.Tapped.Subscribe(e => formsTapRecognizer.InvokeTapped(view)).DisposeWith(_disposable);
-                        tapRecognizer.TouchesBegan.Subscribe(point => formsTapRecognizer.InvokeTouchesBegan(view, point)).DisposeWith(_disposable);
-                        tapRecognizer.TouchesEnded.Subscribe(point => formsTapRecognizer.InvokeTouchesEnded(view, point)).DisposeWith(_disposable);
-                        _disposable.Add(tapRecognizer);
+                    case FormsTapGestureRecognizer tap:
+                        _disposable.Add(new TapRecognizer(Container, tap.NumberOfTapsRequired, tap.NumberOfTouchesRequired).Bind(tap, view, _disposable));
                         break;
-                }                             
+
+                    case FormsLongPressGestureRecognizer longPress:
+                        _disposable.Add(new LongPressRecognizer(Container, longPress.NumberOfTouchesRequired).Bind(longPress, view, _disposable));
+                        break;
+
+                    case FormsSwipeGestureRecognizer swipe:
+                        _disposable.Add(new SwipeRecognizer(Container, swipe.DirectionMask, swipe.NumberOfTouchesRequired).Bind(swipe, view, _disposable));
+                        break;
+
+                    case FormsPanGestureRecognizer pan:
+                        _disposable.Add(new PanRecognizer(Container).Bind(pan, view, _disposable));
+                        break;
+
+                    case FormsPinchGestureRecognizer pinch:
+                        _disposable.Add(new PinchRecognizer(Container).Bind(pinch, view, _disposable));
+                        break;
+                }                                     
             }
         }
 
         /// <inheritdoc/>
-        protected override void OnDetached()
-        {
-            _disposable?.Dispose();
-        }
+        protected override void OnDetached() => _disposable?.Dispose();
     }
 }

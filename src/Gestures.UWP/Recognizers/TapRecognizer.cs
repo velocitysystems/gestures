@@ -10,7 +10,7 @@ namespace Velocity.Gestures.UWP
     /// <summary>
     /// A multi-touch tap gesture recognizer.
     /// </summary>
-    public class TapRecognizer : TapRecognizerBase<FrameworkElement>
+    public class TapRecognizer : PlatformTapRecognizer<FrameworkElement>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TapRecognizer"/> class.

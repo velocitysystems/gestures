@@ -13,12 +13,14 @@ namespace Velocity.Gestures.Forms.Sample.Views
 
         void OnFramePinching(object sender, PinchEventArgs e)
         {
-            PinchingStatus.Text = $"{e.Scale},{e.Origin}";
             if (e.State == GestureState.Ended)
             {
                 DisplayAlert("Pinched", $"You pinched.", "OK");
                 PinchingStatus.Text = "";
+                return;
             }
+
+            PinchingStatus.Text = $"{e.Scale},{e.Origin}";
         }
 
         void OnFrameTouchesBegan(object sender, Point e) => Debug.WriteLine($"Touches Began: {e.X},{e.Y}");

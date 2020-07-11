@@ -13,28 +13,28 @@ namespace Velocity.Gestures
     public enum SwipeDirection
     {
         /// <summary>
-        /// Swipe in any direction.
-        /// </summary>
-        Any = 1,
-
-        /// <summary>
         /// Swipe left.
         /// </summary>
-        Left = 2,
+        Left = 1,
 
         /// <summary>
         /// Swipe right.
         /// </summary>
-        Right = 4,
+        Right = 2,
 
         /// <summary>
         /// Swipe up.
         /// </summary>
-        Up = 8,
+        Up = 4,
 
         /// <summary>
         /// Swipe down.
         /// </summary>
-        Down = 16
+        Down = 8,
+
+        /// <summary>
+        /// Swipe in any direction.
+        /// </summary>
+        Any = Left | Right | Up | Down
     }
 }

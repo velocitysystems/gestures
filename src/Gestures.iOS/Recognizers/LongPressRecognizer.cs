@@ -11,7 +11,7 @@ namespace Velocity.Gestures.iOS
     /// <summary>
     /// A multi-touch long-press gesture recognizer.
     /// </summary>
-    public class LongPressRecognizer : LongPressRecognizerBase<UIView>
+    public class LongPressRecognizer : PlatformLongPressRecognizer<UIView>
     {
         private readonly UILongPressGestureRecognizer _recognizer;
 

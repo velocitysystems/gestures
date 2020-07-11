@@ -138,22 +138,26 @@ namespace Velocity.Gestures.Forms.Sample.Views
 
         void OnPanning(object sender, PanEventArgs e)
         {
-            GestureStatus.Text = $"{e.TotalX},{e.TotalY}";
             if (e.State == GestureState.Ended)
             {
                 DisplayAlert("Panned", $"You panned.", "OK");
                 GestureStatus.Text = "";
+                return;
             }
+
+            GestureStatus.Text = $"{e.TotalX},{e.TotalY}";
         }
 
         void OnPinching(object sender, PinchEventArgs e)
         {
-            GestureStatus.Text = $"{e.Scale},{e.Origin}";
             if (e.State == GestureState.Ended)
             {
                 DisplayAlert("Pinched", $"You pinched.", "OK");
                 GestureStatus.Text = "";
+                return;
             }
+
+            GestureStatus.Text = $"{e.Scale},{e.Origin}";
         }
 
         void OnTouchesBegan(object sender, Point e) => Debug.WriteLine($"Touches Began: {e.X},{e.Y}");

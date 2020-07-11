@@ -12,7 +12,7 @@ namespace Velocity.Gestures.iOS
     /// <summary>
     /// A multi-touch swipe gesture recognizer.
     /// </summary>
-    public class SwipeRecognizer : SwipeRecognizerBase<UIView>
+    public class SwipeRecognizer : PlatformSwipeRecognizer<UIView>
     {
         private readonly List<UISwipeGestureRecognizer> _recognizers;
 
@@ -26,28 +26,28 @@ namespace Velocity.Gestures.iOS
         {
             _recognizers = new List<UISwipeGestureRecognizer>();
 
-            if (directionMask.HasFlag(SwipeDirection.Any) || directionMask.HasFlag(SwipeDirection.Left))
+            if (directionMask.HasFlag(SwipeDirection.Left))
             {
                 var recognizer = new NativeSwipeGestureRecognizer(this, UISwipeGestureRecognizerDirection.Left);
                 _recognizers.Add(recognizer);
                 view.AddGestureRecognizer(recognizer);
             }
 
-            if (directionMask.HasFlag(SwipeDirection.Any) || directionMask.HasFlag(SwipeDirection.Right))
+            if (directionMask.HasFlag(SwipeDirection.Right))
             {
                 var recognizer = new NativeSwipeGestureRecognizer(this, UISwipeGestureRecognizerDirection.Right);
                 _recognizers.Add(recognizer);
                 view.AddGestureRecognizer(recognizer);
             }
 
-            if (directionMask.HasFlag(SwipeDirection.Any) || directionMask.HasFlag(SwipeDirection.Up))
+            if (directionMask.HasFlag(SwipeDirection.Up))
             {
                 var recognizer = new NativeSwipeGestureRecognizer(this, UISwipeGestureRecognizerDirection.Up);
                 _recognizers.Add(recognizer);
                 view.AddGestureRecognizer(recognizer);
             }
 
-            if (directionMask.HasFlag(SwipeDirection.Any) || directionMask.HasFlag(SwipeDirection.Down))
+            if (directionMask.HasFlag(SwipeDirection.Down))
             {
                 var recognizer = new NativeSwipeGestureRecognizer(this, UISwipeGestureRecognizerDirection.Down);
                 _recognizers.Add(recognizer);
