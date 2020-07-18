@@ -45,6 +45,12 @@
                 <views:PinchSamplePage />
             </x:Arguments>
         </NavigationPage>
+
+        <NavigationPage Title="Hover">
+            <x:Arguments>
+                <views:HoverSamplePage />
+            </x:Arguments>
+        </NavigationPage>
     </TabbedPage.Children>
     
 </TabbedPage>

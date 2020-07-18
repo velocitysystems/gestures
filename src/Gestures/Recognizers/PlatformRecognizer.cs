@@ -27,6 +27,12 @@ namespace Velocity.Gestures
         protected PlatformRecognizer(TView view, int numberOfTouchesRequired)
         {
             View = view ?? throw new ArgumentNullException(nameof(view));
+
+            if (numberOfTouchesRequired < 1 || numberOfTouchesRequired > 4)
+            {
+                throw new ArgumentException(nameof(numberOfTouchesRequired), "Number of touches required must be between 1-4.");
+            }
+
             NumberOfTouchesRequired = numberOfTouchesRequired;
 
             _touchesBeganSubject = new Subject<Point>();

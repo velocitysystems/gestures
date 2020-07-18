@@ -23,6 +23,7 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -90,8 +91,17 @@
                 </StackLayout>
             </StackLayout>
         </Frame>
+        <Frame Grid.Column="5">
+            <StackLayout Style="{StaticResource ContainerStyle}">
+                <Label Text="Hover" FontAttributes="Bold" />
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Enabled" VerticalOptions="Center"></Label>
+                    <CheckBox x:Name="HoverEnabled" IsChecked="True" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+            </StackLayout>
+        </Frame>
 
-        <ContentView x:Name="GestureView" Grid.Row="1" Grid.ColumnSpan="5" BackgroundColor="White">
+        <ContentView x:Name="GestureView" Grid.Row="1" Grid.ColumnSpan="6" BackgroundColor="White">
             <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
                 <Label Text="Gesture anywhere on the page." />
                 <Label x:Name="GestureStatus" />

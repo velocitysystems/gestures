@@ -21,4 +21,10 @@
     <ProjectReference Include="..\..\src\Gestures.Forms\Gestures.Forms.csproj" />
     <ProjectReference Include="..\..\src\Gestures\Gestures.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\HoverSamplePage.xaml.cs">
+      <DependentUpon>HoverSamplePage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>

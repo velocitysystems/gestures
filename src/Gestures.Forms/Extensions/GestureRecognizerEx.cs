@@ -122,5 +122,27 @@ namespace Velocity.Gestures.Forms
 
             return nativeRecognizer;
         }
+
+        /// <summary>
+        /// Bind the <see cref="IHoverRecognizer{TView}"/> to the <see cref="HoverGestureRecognizer"/>.
+        /// </summary>
+        /// <typeparam name="TView">The native view.</typeparam>
+        /// <param name="nativeRecognizer">The native recognizer.</param>
+        /// <param name="formsRecognizer">The XF recognizer.</param>
+        /// <param name="sender">The XF view.</param>
+        /// <param name="disposable">The disposable used to clean up subscriptions.</param>
+        /// <returns>The native hover recognizer.</returns>
+        public static IHoverRecognizer<TView> Bind<TView>(
+            this IHoverRecognizer<TView> nativeRecognizer,
+            HoverGestureRecognizer formsRecognizer,
+            View sender,
+            CompositeDisposable disposable) where TView : class
+        {
+            nativeRecognizer.Hovering.Subscribe(e => formsRecognizer.InvokeHovering(sender, e)).DisposeWith(disposable);
+            nativeRecognizer.TouchesBegan.Subscribe(point => formsRecognizer.InvokeTouchesBegan(sender, point)).DisposeWith(disposable);
+            nativeRecognizer.TouchesEnded.Subscribe(point => formsRecognizer.InvokeTouchesEnded(sender, point)).DisposeWith(disposable);
+
+            return nativeRecognizer;
+        }
     }
 }

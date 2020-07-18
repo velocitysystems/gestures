@@ -17,7 +17,7 @@ namespace Velocity.Gestures.WPF
         /// </summary>
         /// <param name="view">The native view.</param>
         /// <param name="numberOfTouchesRequired">Optional number of touches required.</param>
-        public LongPressRecognizer(FrameworkElement view, int numberOfTouchesRequired = 1) : base(view, numberOfTouchesRequired)
+        public LongPressRecognizer(FrameworkElement view, int numberOfTouchesRequired = Defaults.NumberofTouchesRequired) : base(view, numberOfTouchesRequired)
         {
             View.MouseRightButtonDown += OnViewMouseRightButtonDown;
         }

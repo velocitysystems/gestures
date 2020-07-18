@@ -20,7 +20,7 @@ namespace Velocity.Gestures.Droid
         /// <param name="context">The application context.</param>
         /// <param name="view">The native view.</param>
         /// <param name="numberOfTouchesRequired">Optional number of touches required.</param>
-        public LongPressRecognizer(Context context, View view, int numberOfTouchesRequired = 1) : base(view, numberOfTouchesRequired)
+        public LongPressRecognizer(Context context, View view, int numberOfTouchesRequired = Defaults.NumberofTouchesRequired) : base(view, numberOfTouchesRequired)
         {
             _recognizer = new NativeLongPressGestureRecognizer(context, this);
             view.SetOnTouchListener(_recognizer);

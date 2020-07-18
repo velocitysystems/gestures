@@ -11,6 +11,7 @@ Cross-platform, multi-touch gesture recognition for Android, iOS, macOS, UWP and
 |`SwipeRecognizer`|❌|✅|✅|
 |`PanRecognizer`|❌|✅|✅|
 |`PinchRecognizer`|❌|✅|✅|
+|`HoverRecognizer`|❌|❌|❌|
 
 **Windows (.NET Standard)**
 |Type|UWP|WPF|
@@ -20,6 +21,7 @@ Cross-platform, multi-touch gesture recognition for Android, iOS, macOS, UWP and
 |`SwipeRecognizer`|❌|❌|
 |`PanRecognizer`|❌|❌|
 |`PinchRecognizer`|❌|❌|
+|`HoverRecognizer`|✅|✅|
 
 **Xamarin.Forms**
 |Type|Android|iOS|macOS|UWP|WPF|
@@ -29,6 +31,10 @@ Cross-platform, multi-touch gesture recognition for Android, iOS, macOS, UWP and
 |`SwipeGestureRecognizer`|❌|✅|✅|❌|❌|
 |`PanGestureRecognizer`|❌|✅|✅|❌|❌|
 |`PinchGestureRecognizer`|❌|✅|✅|❌|❌|
+|`HoverGestureRecognizer`|❌|❌|❌|✅|✅|
+
+**iOS**
+1. Hover gesture recognizer requires iOS 13 and above.
 
 **UWP**
 1. Long-press gesture recognizer is triggered by a right-click.

@@ -142,6 +142,7 @@
       <Link>SolutionInfo.cs</Link>
     </Compile>
     <Compile Include="Recognizers\LongPressRecognizer.cs" />
+    <Compile Include="Recognizers\HoverRecognizer.cs" />
     <Compile Include="Recognizers\TapRecognizer.cs" />
   </ItemGroup>
   <ItemGroup>

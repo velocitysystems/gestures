@@ -27,7 +27,7 @@ namespace Velocity.Gestures
         /// <param name="directionMask">The direction mask.</param>
         /// <param name="numberOfTouchesRequired">The number of touches required.</param>
         /// <param name="threshold">Optional default threshold in pixels before a swipe is detected.</param>
-        protected PlatformSwipeRecognizer(TView view, SwipeDirection directionMask, int numberOfTouchesRequired, int threshold = 100) : base(view, numberOfTouchesRequired)
+        protected PlatformSwipeRecognizer(TView view, SwipeDirection directionMask, int numberOfTouchesRequired, int threshold = Defaults.Threshold) : base(view, numberOfTouchesRequired)
         {
             DirectionMask = directionMask;
             Threshold = threshold;

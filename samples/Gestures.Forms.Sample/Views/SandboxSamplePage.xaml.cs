@@ -22,6 +22,7 @@ namespace Velocity.Gestures.Forms.Sample.Views
 
             PanEnabled.CheckedChanged += (sender, e) => RefreshRecognizers();
             PinchEnabled.CheckedChanged += (sender, e) => RefreshRecognizers();
+            HoverEnabled.CheckedChanged += (sender, e) => RefreshRecognizers();
         }
 
         /// <summary>
@@ -129,6 +130,15 @@ namespace Velocity.Gestures.Forms.Sample.Views
                 GestureView.GestureRecognizers.Add(pinchRecognizer);
             }
 
+            if (HoverEnabled.IsChecked)
+            {
+                var hoverRecognizer = new HoverGestureRecognizer();
+                hoverRecognizer.Hovering += OnHovering;
+                hoverRecognizer.TouchesBegan += OnTouchesBegan;
+                hoverRecognizer.TouchesEnded += OnTouchesEnded;
+                GestureView.GestureRecognizers.Add(hoverRecognizer);
+            }
+
             GestureView.Effects.Add(Effect.Resolve($"Velocity.{nameof(RecognizerEffect)}"));
         }
 
@@ -158,6 +168,11 @@ namespace Velocity.Gestures.Forms.Sample.Views
             }
 
             GestureStatus.Text = $"{e.Scale},{e.Origin}";
+        }
+
+        void OnHovering(object sender, HoverEventArgs e)
+        {
+            GestureStatus.Text = $"Hovering: {e.State}";
         }
 
         void OnTouchesBegan(object sender, Point e) => Debug.WriteLine($"Touches Began: {e.X},{e.Y}");

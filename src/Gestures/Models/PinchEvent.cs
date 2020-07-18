@@ -5,7 +5,7 @@
 namespace Velocity.Gestures
 {
     /// <summary>
-    /// A pinch event raised by the <see cref="IPinchRecognizer{TView}{TView}"/>.
+    /// A pinch event raised by the <see cref="IPinchRecognizer{TView}"/>.
     /// </summary>
     public sealed class PinchEvent
     {

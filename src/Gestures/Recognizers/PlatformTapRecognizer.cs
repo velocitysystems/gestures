@@ -27,6 +27,11 @@ namespace Velocity.Gestures
         /// <param name="numberOfTouchesRequired">The number of touches required.</param>
         protected PlatformTapRecognizer(TView view, int numberOfTapsRequired, int numberOfTouchesRequired) : base(view, numberOfTouchesRequired)
         {
+            if (numberOfTapsRequired < 1 || numberOfTapsRequired > 2)
+            {
+                throw new ArgumentException(nameof(numberOfTouchesRequired), "Number of taps required must be between 1-2.");
+            }
+
             NumberOfTapsRequired = numberOfTapsRequired;
 
             _tappedSubject = new Subject<Unit>();

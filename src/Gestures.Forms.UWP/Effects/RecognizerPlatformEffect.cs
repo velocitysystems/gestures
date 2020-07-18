@@ -13,6 +13,7 @@ namespace Velocity.Gestures.Forms.UWP
     using Velocity.Gestures.UWP;
     using Xamarin.Forms;
     using Xamarin.Forms.Platform.UWP;
+    using FormsHoverGestureRecognizer = Velocity.Gestures.Forms.HoverGestureRecognizer;
     using FormsLongPressGestureRecognizer = Velocity.Gestures.Forms.LongPressGestureRecognizer;
     using FormsTapGestureRecognizer = Velocity.Gestures.Forms.TapGestureRecognizer;
 
@@ -51,6 +52,10 @@ namespace Velocity.Gestures.Forms.UWP
 
                     case FormsLongPressGestureRecognizer longPress:
                         _disposable.Add(new LongPressRecognizer(Container, longPress.NumberOfTouchesRequired).Bind(longPress, view, _disposable));
+                        break;
+
+                    case FormsHoverGestureRecognizer hover:
+                        _disposable.Add(new HoverRecognizer(Container).Bind(hover, view, _disposable));
                         break;
                 }
             }

@@ -69,6 +69,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Recognizers\HoverRecognizer.cs" />
     <Compile Include="Recognizers\LongPressRecognizer.cs" />
     <Compile Include="Recognizers\TapRecognizer.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

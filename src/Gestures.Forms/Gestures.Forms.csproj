@@ -23,9 +23,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Recognizers\" />
     <Folder Include="Effects\" />
-    <Folder Include="Events\" />
     <Folder Include="Extensions\" />
   </ItemGroup>
   <ItemGroup>

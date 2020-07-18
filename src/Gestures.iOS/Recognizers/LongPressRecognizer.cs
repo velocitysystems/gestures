@@ -20,7 +20,7 @@ namespace Velocity.Gestures.iOS
         /// </summary>
         /// <param name="view">The native view.</param>
         /// <param name="numberOfTouchesRequired">Optional number of touches required.</param>
-        public LongPressRecognizer(UIView view, int numberOfTouchesRequired = 1) : base(view, numberOfTouchesRequired)
+        public LongPressRecognizer(UIView view, int numberOfTouchesRequired = Defaults.NumberofTouchesRequired) : base(view, numberOfTouchesRequired)
         {
             _recognizer = new NativeLongPressGestureRecognizer(this);
             view.AddGestureRecognizer(_recognizer);

@@ -18,7 +18,7 @@ namespace Velocity.Gestures.WPF
         /// <param name="view">The native view.</param>
         /// <param name="numberOfTapsRequired">Optional number of taps required.</param>
         /// <param name="numberOfTouchesRequired">Optional number of touches required.</param>
-        public TapRecognizer(FrameworkElement view, int numberOfTapsRequired = 1, int numberOfTouchesRequired = 1) : base(view, numberOfTapsRequired, numberOfTouchesRequired)
+        public TapRecognizer(FrameworkElement view, int numberOfTapsRequired = Defaults.NumberOfTapsRequired, int numberOfTouchesRequired = Defaults.NumberofTouchesRequired) : base(view, numberOfTapsRequired, numberOfTouchesRequired)
         {
             View.MouseLeftButtonDown += OnViewMouseLeftButtonDown;
         }
