@@ -54,6 +54,7 @@
       <Link>SolutionInfo.cs</Link>
     </Compile>
     <Compile Include="Recognizers\LongPressRecognizer.cs" />
+    <Compile Include="Recognizers\HoverRecognizer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

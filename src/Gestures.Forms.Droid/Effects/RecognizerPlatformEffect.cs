@@ -14,6 +14,7 @@ namespace Velocity.Gestures.Forms.Droid
     using Velocity.Gestures.Droid;
     using Xamarin.Forms;
     using Xamarin.Forms.Platform.Android;
+    using FormsHoverGestureRecognizer = Velocity.Gestures.Forms.HoverGestureRecognizer;
     using FormsLongPressGestureRecognizer = Velocity.Gestures.Forms.LongPressGestureRecognizer;
     using FormsPanGestureRecognizer = Velocity.Gestures.Forms.PanGestureRecognizer;
     using FormsPinchGestureRecognizer = Velocity.Gestures.Forms.PinchGestureRecognizer;
@@ -57,6 +58,10 @@ namespace Velocity.Gestures.Forms.Droid
 
                     case FormsLongPressGestureRecognizer longPress:
                         _disposable.Add(new LongPressRecognizer(Context, Container, longPress.NumberOfTouchesRequired).Bind(longPress, view, _disposable));
+                        break;
+
+                    case FormsHoverGestureRecognizer hover:
+                        _disposable.Add(new HoverRecognizer(Context, Container).Bind(hover, view, _disposable));
                         break;
                 }
             }

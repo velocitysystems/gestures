@@ -11,7 +11,7 @@ Cross-platform, multi-touch gesture and user input recognition for Android, iOS,
 |`SwipeRecognizer`|❌|✅|✅|
 |`PanRecognizer`|❌|✅|✅|
 |`PinchRecognizer`|❌|✅|✅|
-|`HoverRecognizer`|❌|✅|✅|
+|`HoverRecognizer`|✅|✅|✅|
 |`KeyRecognizer`|-|-|❌|
 
 **Windows (.NET Standard)**
@@ -33,15 +33,18 @@ Cross-platform, multi-touch gesture and user input recognition for Android, iOS,
 |`SwipeGestureRecognizer`|❌|✅|✅|❌|❌|
 |`PanGestureRecognizer`|❌|✅|✅|❌|❌|
 |`PinchGestureRecognizer`|❌|✅|✅|❌|❌|
-|`HoverGestureRecognizer`|❌|✅|✅|✅|✅|
-|`KeyInputRecognizer`|-|-|❌|❌|❌s|
+|`HoverGestureRecognizer`|✅|✅|✅|✅|✅|
+|`KeyGestureRecognizer`|-|-|❌|❌|❌|
+
+**Android**
+1. Hover recognizer requires hardware support.
 
 **iOS**
-1. Hover gesture recognizer requires iOS 13 and above.
+1. Hover recognizer requires iOS 13 and above.
 
 **UWP**
-1. Long-press gesture recognizer is triggered by a right-click.
+1. Long-press recognizer is triggered by a right-click.
 
 **WPF**
-1. For gestures to fire correctly in Xamarin.Forms, they must be attached to a View where the BackgroundColor is opaque (not transparent).
-2. Long-press gesture recognizer is triggered by a right-click.
+1. For gestures to work in Xamarin.Forms, they must be attached to a view where the background color is opaque (not transparent).
+2. Long-press recognizer is triggered by a right-click.
