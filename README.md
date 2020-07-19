@@ -3,7 +3,9 @@ Cross-platform, multi-touch gesture and user input recognition for Android, iOS,
 
 [![Build Status](https://dev.azure.com/velocitysystems/gestures/_apis/build/status/velocitysystems.gestures?branchName=master)](https://dev.azure.com/velocitysystems/gestures/_build/latest?definitionId=1&branchName=master)
 
-**Xamarin (.NET Standard)**
+## Platforms
+
+### Xamarin (.NET Standard)
 |Type|Android|iOS|macOS|
 |---|---|---|---|
 |`TapRecognizer`|✅|✅|✅|
@@ -14,7 +16,7 @@ Cross-platform, multi-touch gesture and user input recognition for Android, iOS,
 |`HoverRecognizer`|✅|✅|✅|
 |`KeyRecognizer`|-|-|❌|
 
-**Windows (.NET Standard)**
+### Windows (.NET Standard)
 |Type|UWP|WPF|
 |---|---|---|
 |`TapRecognizer`|✅|✅|
@@ -25,7 +27,7 @@ Cross-platform, multi-touch gesture and user input recognition for Android, iOS,
 |`HoverRecognizer`|✅|✅|
 |`KeyRecognizer`|❌|❌|
 
-**Xamarin.Forms**
+### Xamarin.Forms
 |Type|Android|iOS|macOS|UWP|WPF|
 |---|---|---|---|---|---|
 |`TapGestureRecognizer`|✅|✅|✅|✅|✅|
@@ -36,15 +38,28 @@ Cross-platform, multi-touch gesture and user input recognition for Android, iOS,
 |`HoverGestureRecognizer`|✅|✅|✅|✅|✅|
 |`KeyGestureRecognizer`|-|-|❌|❌|❌|
 
-**Android**
+## Support Notes
+
+### Android
 1. Hover recognizer requires hardware support.
 
-**iOS**
+### iOS
 1. Hover recognizer requires iOS 13 and above.
 
-**UWP**
+### UWP
 1. Long-press recognizer is triggered by a right-click.
 
-**WPF**
+### WPF
 1. For gestures to work in Xamarin.Forms, they must be attached to a view where the background color is opaque (not transparent).
 2. Long-press recognizer is triggered by a right-click.
+
+## Remaining Work
+- [ ] Add key input recognizer on supported platforms
+- [ ] Add gesture detection algorithm for platforms which do not offer inbuilt recognition.
+- [ ] Add platform support for swipe, pan and pinch gestures on Android, UWP and WPF.
+- [ ] Add platform support for delay-based long-press recognition on macOS, UWP and WPF.
+- [ ] Add unit tests for shared classes
+- [ ] Add license validator implementation
+- [ ] Add platform sample pags (non-Xamarin.Forms)
+- [ ] Use multi-targeting for Android support libary and AndroidX support.
+- [ ] Implement YAML build script
