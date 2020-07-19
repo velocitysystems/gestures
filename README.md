@@ -1,5 +1,5 @@
 # gestures
-Cross-platform, multi-touch gesture recognition for Android, iOS, macOS, UWP and WPF.
+Cross-platform, multi-touch gesture and user input recognition for Android, iOS, macOS, UWP and WPF.
 
 [![Build Status](https://dev.azure.com/velocitysystems/gestures/_apis/build/status/velocitysystems.gestures?branchName=master)](https://dev.azure.com/velocitysystems/gestures/_build/latest?definitionId=1&branchName=master)
 
@@ -11,7 +11,8 @@ Cross-platform, multi-touch gesture recognition for Android, iOS, macOS, UWP and
 |`SwipeRecognizer`|❌|✅|✅|
 |`PanRecognizer`|❌|✅|✅|
 |`PinchRecognizer`|❌|✅|✅|
-|`HoverRecognizer`|❌|❌|❌|
+|`HoverRecognizer`|❌|✅|✅|
+|`KeyRecognizer`|-|-|❌|
 
 **Windows (.NET Standard)**
 |Type|UWP|WPF|
@@ -22,6 +23,7 @@ Cross-platform, multi-touch gesture recognition for Android, iOS, macOS, UWP and
 |`PanRecognizer`|❌|❌|
 |`PinchRecognizer`|❌|❌|
 |`HoverRecognizer`|✅|✅|
+|`KeyRecognizer`|❌|❌|
 
 **Xamarin.Forms**
 |Type|Android|iOS|macOS|UWP|WPF|
@@ -31,7 +33,8 @@ Cross-platform, multi-touch gesture recognition for Android, iOS, macOS, UWP and
 |`SwipeGestureRecognizer`|❌|✅|✅|❌|❌|
 |`PanGestureRecognizer`|❌|✅|✅|❌|❌|
 |`PinchGestureRecognizer`|❌|✅|✅|❌|❌|
-|`HoverGestureRecognizer`|❌|❌|❌|✅|✅|
+|`HoverGestureRecognizer`|❌|✅|✅|✅|✅|
+|`KeyInputRecognizer`|-|-|❌|❌|❌s|
 
 **iOS**
 1. Hover gesture recognizer requires iOS 13 and above.

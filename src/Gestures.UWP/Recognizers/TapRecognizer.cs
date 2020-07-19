@@ -20,15 +20,31 @@ namespace Velocity.Gestures.UWP
         /// <param name="numberOfTouchesRequired">Optional number of touches required.</param>
         public TapRecognizer(FrameworkElement view, int numberOfTapsRequired = Defaults.NumberOfTapsRequired, int numberOfTouchesRequired = Defaults.NumberofTouchesRequired) : base(view, numberOfTapsRequired, numberOfTouchesRequired)
         {
-            View.Tapped += OnViewTapped;
+            View.Tapped += OnTapped;
+            View.PointerPressed += OnPointerPressed;
+            View.PointerReleased += OnPointerReleased;
         }
 
         /// <inheritdoc/>
         public override void Dispose()
         {
-            View.Tapped -= OnViewTapped;
+            View.Tapped -= OnTapped;
+            View.PointerPressed -= OnPointerPressed;
+            View.PointerReleased -= OnPointerReleased;
         }
 
-        private void OnViewTapped(object sender, TappedRoutedEventArgs e) => OnTapped();
+        private void OnTapped(object sender, TappedRoutedEventArgs e) => OnTapped();
+
+        private void OnPointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            var point = e.GetCurrentPoint(View);
+            OnTouchesBegan(point.Position.X, point.Position.Y);
+        }
+
+        private void OnPointerReleased(object sender, PointerRoutedEventArgs e)
+        {
+            var point = e.GetCurrentPoint(View);
+            OnTouchesEnded(point.Position.X, point.Position.Y);
+        }
     }
 }

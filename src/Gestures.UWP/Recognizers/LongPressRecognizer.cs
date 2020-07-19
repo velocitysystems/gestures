@@ -19,15 +19,31 @@ namespace Velocity.Gestures.UWP
         /// <param name="numberOfTouchesRequired">Optional number of touches required.</param>
         public LongPressRecognizer(FrameworkElement view, int numberOfTouchesRequired = Defaults.NumberofTouchesRequired) : base(view, numberOfTouchesRequired)
         {
-            View.RightTapped += OnViewRightTapped;
+            View.RightTapped += OnRightTapped;
+            View.PointerPressed += OnPointerPressed;
+            View.PointerReleased += OnPointerReleased;
         }
 
         /// <inheritdoc/>
         public override void Dispose()
         {
-            View.RightTapped -= OnViewRightTapped;
+            View.RightTapped -= OnRightTapped;
+            View.PointerPressed -= OnPointerPressed;
+            View.PointerReleased -= OnPointerReleased;
         }
 
-        private void OnViewRightTapped(object sender, RightTappedRoutedEventArgs e) => OnLongPressed();
+        private void OnRightTapped(object sender, RightTappedRoutedEventArgs e) => OnLongPressed();
+
+        private void OnPointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            var point = e.GetCurrentPoint(View);
+            OnTouchesBegan(point.Position.X, point.Position.Y);
+        }
+
+        private void OnPointerReleased(object sender, PointerRoutedEventArgs e)
+        {
+            var point = e.GetCurrentPoint(View);
+            OnTouchesEnded(point.Position.X, point.Position.Y);
+        }
     }
 }

@@ -29,8 +29,18 @@ namespace Velocity.Gestures.UWP
             View.PointerExited -= OnPointerExited;
         }
 
-        private void OnPointerEntered(object sender, PointerRoutedEventArgs e) => OnHoveringStateChanged(GestureState.Began);
+        private void OnPointerEntered(object sender, PointerRoutedEventArgs e)
+        {
+            var point = e.GetCurrentPoint(View);
+            OnTouchesBegan(point.Position.X, point.Position.Y);
+            OnHoveringStateChanged(GestureState.Began);
+        }
 
-        private void OnPointerExited(object sender, PointerRoutedEventArgs e) => OnHoveringStateChanged(GestureState.Ended);
+        private void OnPointerExited(object sender, PointerRoutedEventArgs e)
+        {
+            var point = e.GetCurrentPoint(View);
+            OnHoveringStateChanged(GestureState.Ended);
+            OnTouchesEnded(point.Position.X, point.Position.Y);
+        }
     }
 }

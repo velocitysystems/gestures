@@ -20,15 +20,31 @@ namespace Velocity.Gestures.WPF
         /// <param name="numberOfTouchesRequired">Optional number of touches required.</param>
         public TapRecognizer(FrameworkElement view, int numberOfTapsRequired = Defaults.NumberOfTapsRequired, int numberOfTouchesRequired = Defaults.NumberofTouchesRequired) : base(view, numberOfTapsRequired, numberOfTouchesRequired)
         {
-            View.MouseLeftButtonDown += OnViewMouseLeftButtonDown;
+            View.MouseLeftButtonDown += OnMouseLeftButtonDown;
+            View.MouseDown += OnMouseDown;
+            View.MouseUp += OnMouseUp;
         }
 
         /// <inheritdoc/>
         public override void Dispose()
         {
-            View.MouseLeftButtonDown -= OnViewMouseLeftButtonDown;
+            View.MouseLeftButtonDown -= OnMouseLeftButtonDown;
+            View.MouseDown -= OnMouseDown;
+            View.MouseUp -= OnMouseUp;
         }
 
-        private void OnViewMouseLeftButtonDown(object sender, MouseButtonEventArgs e) => OnTapped();
+        private void OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e) => OnTapped();
+
+        private void OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            var point = e.GetPosition(View);
+            OnTouchesBegan(point.X, point.Y);
+        }
+
+        private void OnMouseUp(object sender, MouseButtonEventArgs e)
+        {
+            var point = e.GetPosition(View);
+            OnTouchesEnded(point.X, point.Y);
+        }
     }
 }

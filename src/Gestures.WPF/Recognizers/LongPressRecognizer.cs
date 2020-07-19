@@ -19,15 +19,31 @@ namespace Velocity.Gestures.WPF
         /// <param name="numberOfTouchesRequired">Optional number of touches required.</param>
         public LongPressRecognizer(FrameworkElement view, int numberOfTouchesRequired = Defaults.NumberofTouchesRequired) : base(view, numberOfTouchesRequired)
         {
-            View.MouseRightButtonDown += OnViewMouseRightButtonDown;
+            View.MouseRightButtonDown += OnMouseRightButtonDown;
+            View.MouseDown += OnMouseDown;
+            View.MouseUp += OnMouseUp;
         }
 
         /// <inheritdoc/>
         public override void Dispose()
         {
-            View.MouseRightButtonDown -= OnViewMouseRightButtonDown;
+            View.MouseRightButtonDown -= OnMouseRightButtonDown;
+            View.MouseDown -= OnMouseDown;
+            View.MouseUp -= OnMouseUp;
         }
 
-        private void OnViewMouseRightButtonDown(object sender, MouseButtonEventArgs e) => OnLongPressed();
+        private void OnMouseRightButtonDown(object sender, MouseButtonEventArgs e) => OnLongPressed();
+
+        private void OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            var point = e.GetPosition(View);
+            OnTouchesBegan(point.X, point.Y);
+        }
+
+        private void OnMouseUp(object sender, MouseButtonEventArgs e)
+        {
+            var point = e.GetPosition(View);
+            OnTouchesEnded(point.X, point.Y);
+        }
     }
 }

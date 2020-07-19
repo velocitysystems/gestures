@@ -13,6 +13,7 @@ namespace Velocity.Gestures.Forms.iOS
     using Velocity.Gestures.iOS;
     using Xamarin.Forms;
     using Xamarin.Forms.Platform.iOS;
+    using FormsHoverGestureRecognizer = Velocity.Gestures.Forms.HoverGestureRecognizer;
     using FormsLongPressGestureRecognizer = Velocity.Gestures.Forms.LongPressGestureRecognizer;
     using FormsPanGestureRecognizer = Velocity.Gestures.Forms.PanGestureRecognizer;
     using FormsPinchGestureRecognizer = Velocity.Gestures.Forms.PinchGestureRecognizer;
@@ -66,6 +67,10 @@ namespace Velocity.Gestures.Forms.iOS
 
                     case FormsPinchGestureRecognizer pinch:
                         _disposable.Add(new PinchRecognizer(Container).Bind(pinch, view, _disposable));
+                        break;
+
+                    case FormsHoverGestureRecognizer hover:
+                        _disposable.Add(new HoverRecognizer(Container).Bind(hover, view, _disposable));
                         break;
                 }
             }

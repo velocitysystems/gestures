@@ -29,8 +29,20 @@ namespace Velocity.Gestures.WPF
             View.MouseLeave -= OnMouseLeave;
         }
 
-        private void OnMouseEnter(object sender, MouseEventArgs e) => OnHoveringStateChanged(GestureState.Began);
+        private void OnMouseEnter(object sender, MouseEventArgs e)
+        {
+            var point = e.GetPosition(View);
 
-        private void OnMouseLeave(object sender, MouseEventArgs e) => OnHoveringStateChanged(GestureState.Ended);
+            OnTouchesBegan(point.X, point.Y);
+            OnHoveringStateChanged(GestureState.Began);
+        }
+
+        private void OnMouseLeave(object sender, MouseEventArgs e)
+        {
+            var point = e.GetPosition(View);
+
+            OnHoveringStateChanged(GestureState.Ended);
+            OnTouchesEnded(point.X, point.Y);
+        }
     }
 }

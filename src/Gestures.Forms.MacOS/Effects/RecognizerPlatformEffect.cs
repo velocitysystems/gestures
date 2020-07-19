@@ -13,6 +13,7 @@ namespace Velocity.Gestures.Forms.MacOS
     using Velocity.Gestures.MacOS;
     using Xamarin.Forms;
     using Xamarin.Forms.Platform.MacOS;
+    using FormsHoverGestureRecognizer = Velocity.Gestures.Forms.HoverGestureRecognizer;
     using FormsLongPressGestureRecognizer = Velocity.Gestures.Forms.LongPressGestureRecognizer;
     using FormsPanGestureRecognizer = Velocity.Gestures.Forms.PanGestureRecognizer;
     using FormsPinchGestureRecognizer = Velocity.Gestures.Forms.PinchGestureRecognizer;
@@ -31,7 +32,7 @@ namespace Velocity.Gestures.Forms.MacOS
         /// </summary>
         internal static void Init()
         {
-            // Force Xamarin.macOS linker to preserve the effect.
+            // Force Xamarin.Mac linker to preserve the effect.
             // https://bugzilla.xamarin.com/show_bug.cgi?id=31076
             _ = typeof(RecognizerPlatformEffect);
         }
@@ -66,6 +67,10 @@ namespace Velocity.Gestures.Forms.MacOS
 
                     case FormsPinchGestureRecognizer pinch:
                         _disposable.Add(new PinchRecognizer(Container).Bind(pinch, view, _disposable));
+                        break;
+
+                    case FormsHoverGestureRecognizer hover:
+                        _disposable.Add(new HoverRecognizer(Container).Bind(hover, view, _disposable));
                         break;
                 }                                     
             }

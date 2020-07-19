@@ -77,6 +77,7 @@
     <Compile Include="Recognizers\PanRecognizer.cs" />
     <Compile Include="Recognizers\PinchRecognizer.cs" />
     <Compile Include="Recognizers\SwipeRecognizer.cs" />
+    <Compile Include="Recognizers\HoverRecognizer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gestures\Gestures.csproj">
