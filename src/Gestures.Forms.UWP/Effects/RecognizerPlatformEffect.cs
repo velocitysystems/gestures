@@ -2,7 +2,6 @@
 //     Copyright (c) 2020 Velocity Systems
 // </copyright>
 
-[assembly: Xamarin.Forms.ResolutionGroupName("Velocity")]
 [assembly: Xamarin.Forms.ExportEffect(
     typeof(Velocity.Gestures.Forms.UWP.RecognizerPlatformEffect),
     nameof(Velocity.Gestures.Forms.RecognizerEffect))]

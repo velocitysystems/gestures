@@ -11,7 +11,7 @@ namespace Velocity.Gestures
     /// A multi-touch tap gesture recognizer.
     /// </summary>
     /// <typeparam name="TView">The native view.</typeparam>
-    public interface ITapRecognizer<TView> : IRecognizer<TView> where TView : class
+    public interface ITapRecognizer<TView> : IPlatformRecognizer<TView> where TView : class
     {
         /// <summary>
         /// Gets the number of taps required.

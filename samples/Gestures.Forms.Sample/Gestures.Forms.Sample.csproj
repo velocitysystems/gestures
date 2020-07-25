@@ -23,6 +23,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\KeySamplePage.xaml.cs">
+      <DependentUpon>KeySamplePage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\HoverSamplePage.xaml.cs">
       <DependentUpon>HoverSamplePage.xaml</DependentUpon>
     </Compile>

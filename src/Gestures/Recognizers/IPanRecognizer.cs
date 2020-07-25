@@ -10,7 +10,7 @@ namespace Velocity.Gestures
     /// A multi-touch pan gesture recognizer.
     /// </summary>
     /// <typeparam name="TView">The native view.</typeparam>
-    public interface IPanRecognizer<TView> : IRecognizer<TView> where TView : class
+    public interface IPanRecognizer<TView> : IPlatformRecognizer<TView> where TView : class
     {
         /// <summary>
         /// Gets the panning observable.

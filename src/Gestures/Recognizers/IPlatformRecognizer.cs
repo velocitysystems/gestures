@@ -1,4 +1,4 @@
-﻿// <copyright file="IRecognizer.cs" company="Velocity Systems">
+﻿// <copyright file="IPlatformRecognizer.cs" company="Velocity Systems">
 //     Copyright (c) 2020 Velocity Systems
 // </copyright>
 
@@ -10,13 +10,8 @@ namespace Velocity.Gestures
     /// A multi-touch gesture recognizer.
     /// </summary>
     /// <typeparam name="TView">The native view.</typeparam>
-    public interface IRecognizer<TView> : IDisposable where TView : class
+    public interface IPlatformRecognizer<TView> : IViewAttachment<TView> where TView : class
     {
-        /// <summary>
-        /// Gets the view.
-        /// </summary>
-        TView View { get; }
-
         /// <summary>
         /// Gets the number of touches required.
         /// </summary>

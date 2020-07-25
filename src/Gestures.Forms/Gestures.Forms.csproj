@@ -23,10 +23,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Effects\" />
-    <Folder Include="Extensions\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Gestures\Gestures.csproj" />
   </ItemGroup>
 </Project>

@@ -10,7 +10,7 @@ namespace Velocity.Gestures
     /// A multi-touch swipe gesture recognizer.
     /// </summary>
     /// <typeparam name="TView">The native view.</typeparam>
-    public interface ISwipeRecognizer<TView> : IRecognizer<TView> where TView : class
+    public interface ISwipeRecognizer<TView> : IPlatformRecognizer<TView> where TView : class
     {
         /// <summary>
         /// Gets the swipe direction mask.

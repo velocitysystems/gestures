@@ -23,6 +23,7 @@ namespace Velocity.Gestures.Forms.Sample.Views
             PanEnabled.CheckedChanged += (sender, e) => RefreshRecognizers();
             PinchEnabled.CheckedChanged += (sender, e) => RefreshRecognizers();
             HoverEnabled.CheckedChanged += (sender, e) => RefreshRecognizers();
+            KeyEnabled.CheckedChanged += (sender, e) => RefreshRecognizers();
         }
 
         /// <summary>
@@ -139,7 +140,17 @@ namespace Velocity.Gestures.Forms.Sample.Views
                 GestureView.GestureRecognizers.Add(hoverRecognizer);
             }
 
+            if (KeyEnabled.IsChecked)
+            {
+                var keyListener = new KeyGestureListener();
+                keyListener.Pressed += OnPressed;
+                keyListener.KeyDown += OnKeyDown;
+                keyListener.KeyUp += OnKeyUp;
+                GestureView.GestureRecognizers.Add(keyListener);
+            }
+
             GestureView.Effects.Add(Effect.Resolve($"Velocity.{nameof(RecognizerEffect)}"));
+            GestureView.Effects.Add(Effect.Resolve($"Velocity.{nameof(ListenerEffect)}"));
         }
 
         void OnTapped(object sender, TapEventArgs e) => DisplayAlert("Tapped", $"You tapped {e.NumberOfTaps} time(s) with {e.NumberOfTouches} touch(es).", "OK");
@@ -174,6 +185,14 @@ namespace Velocity.Gestures.Forms.Sample.Views
         {
             GestureStatus.Text = $"Hovering: {e.State}";
         }
+
+        void OnPressed(object sender, KeyEventArgs e)
+        {
+            GestureStatus.Text = $"Pressed: {string.Join(",", e.Keys)}";
+        }
+
+        void OnKeyDown(object sender, Key e) => Debug.WriteLine($"Key Down: {e}");
+        void OnKeyUp(object sender, Key e) => Debug.WriteLine($"Key Up: {e}");
 
         void OnTouchesBegan(object sender, Point e) => Debug.WriteLine($"Touches Began: {e.X},{e.Y}");
         void OnTouchesEnded(object sender, Point e) => Debug.WriteLine($"Touches Ended: {e.X},{e.Y}");

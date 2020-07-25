@@ -51,6 +51,12 @@
                 <views:HoverSamplePage />
             </x:Arguments>
         </NavigationPage>
+
+        <NavigationPage Title="Key">
+            <x:Arguments>
+                <views:KeySamplePage />
+            </x:Arguments>
+        </NavigationPage>
     </TabbedPage.Children>
     
 </TabbedPage>

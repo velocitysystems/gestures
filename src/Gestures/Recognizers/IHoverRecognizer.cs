@@ -10,7 +10,7 @@ namespace Velocity.Gestures
     /// A multi-touch hover gesture recognizer.
     /// </summary>
     /// <typeparam name="TView">The native view.</typeparam>
-    public interface IHoverRecognizer<TView> : IRecognizer<TView> where TView : class
+    public interface IHoverRecognizer<TView> : IPlatformRecognizer<TView> where TView : class
     {
         /// <summary>
         /// Gets the hovering observable.

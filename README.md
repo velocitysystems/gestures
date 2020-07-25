@@ -14,7 +14,7 @@ Cross-platform, multi-touch gesture and user input recognition for Android, iOS,
 |`PanRecognizer`|❌|✅|✅|
 |`PinchRecognizer`|❌|✅|✅|
 |`HoverRecognizer`|✅|✅|✅|
-|`KeyRecognizer`|-|-|❌|
+|`KeyListener`|-|-|❌|
 
 ### Windows (.NET Standard)
 |Type|UWP|WPF|
@@ -25,7 +25,7 @@ Cross-platform, multi-touch gesture and user input recognition for Android, iOS,
 |`PanRecognizer`|❌|❌|
 |`PinchRecognizer`|❌|❌|
 |`HoverRecognizer`|✅|✅|
-|`KeyRecognizer`|❌|❌|
+|`KeyListener`|✅|❌|
 
 ### Xamarin.Forms
 |Type|Android|iOS|macOS|UWP|WPF|
@@ -36,7 +36,7 @@ Cross-platform, multi-touch gesture and user input recognition for Android, iOS,
 |`PanGestureRecognizer`|❌|✅|✅|❌|❌|
 |`PinchGestureRecognizer`|❌|✅|✅|❌|❌|
 |`HoverGestureRecognizer`|✅|✅|✅|✅|✅|
-|`KeyGestureRecognizer`|-|-|❌|❌|❌|
+|`KeyGestureListener`|-|-|❌|✅|❌|
 
 ## Support Notes
 
@@ -54,7 +54,6 @@ Cross-platform, multi-touch gesture and user input recognition for Android, iOS,
 2. Long-press recognizer is triggered by a right-click.
 
 ## Remaining Work
-- [ ] Add key input recognizer on supported platforms
 - [ ] Add gesture detection algorithm for platforms which do not offer inbuilt recognition.
 - [ ] Add platform support for swipe, pan and pinch gestures on Android, UWP and WPF.
 - [ ] Add platform support for delay-based long-press recognition on macOS, UWP and WPF.

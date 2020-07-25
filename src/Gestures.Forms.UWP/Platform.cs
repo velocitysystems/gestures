@@ -2,6 +2,8 @@
 //     Copyright (c) 2020 Velocity Systems
 // </copyright>
 
+[assembly: Xamarin.Forms.ResolutionGroupName("Velocity")]
+
 namespace Velocity.Gestures.Forms.UWP
 {
     /// <summary>

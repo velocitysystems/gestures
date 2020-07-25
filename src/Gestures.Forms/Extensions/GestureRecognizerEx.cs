@@ -9,7 +9,7 @@ using Xamarin.Forms;
 namespace Velocity.Gestures.Forms
 {
     /// <summary>
-    /// Extensions for <see cref="IRecognizer"/>.
+    /// Extensions for <see cref="IPlatformRecognizer{TView}"/>.
     /// </summary>
     public static class GestureRecognizerEx
     {

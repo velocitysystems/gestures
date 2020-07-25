@@ -16,94 +16,99 @@
         </Style>
     </ContentPage.Resources>
 
-    <Grid ColumnSpacing="20">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
+    <Grid RowSpacing="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Frame Grid.Column="0">
-            <StackLayout Style="{StaticResource ContainerStyle}">
-                <Label Text="Tap" FontAttributes="Bold" />
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Enabled" VerticalOptions="Center"></Label>
-                    <CheckBox x:Name="TapEnabled" IsChecked="True" HorizontalOptions="EndAndExpand" />
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Taps" VerticalOptions="Center"></Label>
-                    <Entry x:Name="TapNumberOfTaps" Text="1" HorizontalOptions="EndAndExpand" />
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Touches" VerticalOptions="Center"></Label>
-                    <Entry x:Name="TapNumberOfTouches" Text="1" HorizontalOptions="EndAndExpand" />
-                </StackLayout>
+        <ScrollView Grid.Row="0" Orientation="Horizontal">
+            <StackLayout Orientation="Horizontal">
+                <Frame>
+                    <StackLayout Style="{StaticResource ContainerStyle}">
+                        <Label Text="Tap" FontAttributes="Bold" />
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Enabled" VerticalOptions="Center"></Label>
+                            <CheckBox x:Name="TapEnabled" IsChecked="True" HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Taps" VerticalOptions="Center"></Label>
+                            <Entry x:Name="TapNumberOfTaps" Text="1" HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Touches" VerticalOptions="Center"></Label>
+                            <Entry x:Name="TapNumberOfTouches" Text="1" HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout Style="{StaticResource ContainerStyle}">
+                        <Label Text="Long Press" FontAttributes="Bold" />
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Enabled" VerticalOptions="Center"></Label>
+                            <CheckBox x:Name="LongPressEnabled" IsChecked="True" HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Touches" VerticalOptions="Center"></Label>
+                            <Entry x:Name="LongPressNumberOfTouches" Text="1" HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout Style="{StaticResource ContainerStyle}">
+                        <Label Text="Swipe" FontAttributes="Bold" />
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Enabled" VerticalOptions="Center"></Label>
+                            <CheckBox x:Name="SwipeEnabled" IsChecked="True" HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Touches" VerticalOptions="Center"></Label>
+                            <Entry x:Name="SwipeNumberOfTouches" Text="1" HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout Style="{StaticResource ContainerStyle}">
+                        <Label Text="Pan" FontAttributes="Bold" />
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Enabled" VerticalOptions="Center"></Label>
+                            <CheckBox x:Name="PanEnabled" IsChecked="True" HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout Style="{StaticResource ContainerStyle}">
+                        <Label Text="Pinch" FontAttributes="Bold" />
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Enabled" VerticalOptions="Center"></Label>
+                            <CheckBox x:Name="PinchEnabled" IsChecked="True" HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout Style="{StaticResource ContainerStyle}">
+                        <Label Text="Hover" FontAttributes="Bold" />
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Enabled" VerticalOptions="Center"></Label>
+                            <CheckBox x:Name="HoverEnabled" IsChecked="True" HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout Style="{StaticResource ContainerStyle}">
+                        <Label Text="Key" FontAttributes="Bold" />
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Enabled" VerticalOptions="Center"></Label>
+                            <CheckBox x:Name="KeyEnabled" IsChecked="True" HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
             </StackLayout>
-        </Frame>
-        <Frame Grid.Column="1">
-            <StackLayout Style="{StaticResource ContainerStyle}">
-                <Label Text="Long Press" FontAttributes="Bold" />
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Enabled" VerticalOptions="Center"></Label>
-                    <CheckBox x:Name="LongPressEnabled" IsChecked="True" HorizontalOptions="EndAndExpand" />
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Touches" VerticalOptions="Center"></Label>
-                    <Entry x:Name="LongPressNumberOfTouches" Text="1" HorizontalOptions="EndAndExpand" />
-                </StackLayout>
-            </StackLayout>
-        </Frame>
-        <Frame Grid.Column="2">
-            <StackLayout Style="{StaticResource ContainerStyle}">
-                <Label Text="Swipe" FontAttributes="Bold" />
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Enabled" VerticalOptions="Center"></Label>
-                    <CheckBox x:Name="SwipeEnabled" IsChecked="True" HorizontalOptions="EndAndExpand" />
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Touches" VerticalOptions="Center"></Label>
-                    <Entry x:Name="SwipeNumberOfTouches" Text="1" HorizontalOptions="EndAndExpand" />
-                </StackLayout>
-            </StackLayout>
-        </Frame>
-        <Frame Grid.Column="3">
-            <StackLayout Style="{StaticResource ContainerStyle}">
-                <Label Text="Pan" FontAttributes="Bold" />
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Enabled" VerticalOptions="Center"></Label>
-                    <CheckBox x:Name="PanEnabled" IsChecked="True" HorizontalOptions="EndAndExpand" />
-                </StackLayout>
-            </StackLayout>
-        </Frame>
-        <Frame Grid.Column="4">
-            <StackLayout Style="{StaticResource ContainerStyle}">
-                <Label Text="Pinch" FontAttributes="Bold" />
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Enabled" VerticalOptions="Center"></Label>
-                    <CheckBox x:Name="PinchEnabled" IsChecked="True" HorizontalOptions="EndAndExpand" />
-                </StackLayout>
-            </StackLayout>
-        </Frame>
-        <Frame Grid.Column="5">
-            <StackLayout Style="{StaticResource ContainerStyle}">
-                <Label Text="Hover" FontAttributes="Bold" />
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Enabled" VerticalOptions="Center"></Label>
-                    <CheckBox x:Name="HoverEnabled" IsChecked="True" HorizontalOptions="EndAndExpand" />
-                </StackLayout>
-            </StackLayout>
-        </Frame>
-
-        <ContentView x:Name="GestureView" Grid.Row="1" Grid.ColumnSpan="6" BackgroundColor="White">
+        </ScrollView>
+        
+        <ContentView x:Name="GestureView" Grid.Row="1" BackgroundColor="White">
             <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-                <Label Text="Gesture anywhere on the page." />
+                <Label Text="Gesture or type anywhere on the page." />
                 <Label x:Name="GestureStatus" />
             </StackLayout>
         </ContentView>

@@ -10,7 +10,7 @@ namespace Velocity.Gestures
     /// A multi-touch pinch gesture recognizer.
     /// </summary>
     /// <typeparam name="TView">The native view.</typeparam>
-    public interface IPinchRecognizer<TView> : IRecognizer<TView> where TView : class
+    public interface IPinchRecognizer<TView> : IPlatformRecognizer<TView> where TView : class
     {
         /// <summary>
         /// Gets the pinching observable.

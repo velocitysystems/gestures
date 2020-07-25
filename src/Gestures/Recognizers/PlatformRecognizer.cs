@@ -14,7 +14,7 @@ namespace Velocity.Gestures
     /// </summary>
     /// <typeparam name="TView">The native view.</typeparam>
     [EditorBrowsable(EditorBrowsableState.Never)]
-    public abstract class PlatformRecognizer<TView> : IRecognizer<TView> where TView : class
+    public abstract class PlatformRecognizer<TView> : IPlatformRecognizer<TView> where TView : class
     {
         private readonly ISubject<Point> _touchesBeganSubject;
         private readonly ISubject<Point> _touchesEndedSubject;

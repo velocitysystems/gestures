@@ -11,7 +11,7 @@ namespace Velocity.Gestures
     /// A multi-touch long-press gesture recognizer.
     /// </summary>
     /// <typeparam name="TView">The native view.</typeparam>
-    public interface ILongPressRecognizer<TView> : IRecognizer<TView> where TView : class
+    public interface ILongPressRecognizer<TView> : IPlatformRecognizer<TView> where TView : class
     {
         /// <summary>
         /// Gets the long-pressed observable.
