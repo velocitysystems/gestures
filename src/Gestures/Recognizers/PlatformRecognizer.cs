@@ -62,13 +62,13 @@ namespace Velocity.Gestures
         /// </summary>
         /// <param name="x">The X-coordinate.</param>
         /// <param name="y">The Y-coordinate.</param>
-        protected void OnTouchesBegan(double x, double y) => _touchesBeganSubject.OnNext(new Point(x, y));
+        internal void OnTouchesBegan(double x, double y) => _touchesBeganSubject.OnNext(new Point(x, y));
 
         /// <summary>
         /// Call when touches end.
         /// </summary>
         /// <param name="x">The X-coordinate.</param>
         /// <param name="y">The Y-coordinate.</param>
-        protected void OnTouchesEnded(double x, double y) => _touchesEndedSubject.OnNext(new Point(x, y));
+        internal void OnTouchesEnded(double x, double y) => _touchesEndedSubject.OnNext(new Point(x, y));
     }
 }
