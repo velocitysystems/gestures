@@ -1,5 +1,5 @@
 ﻿// <copyright file="IViewAttachment.cs" company="Velocity Systems">
-//     Copyright (c) 2020 Velocity Systems
+//     Copyright (c) 2020 Vsselocity Systems
 // </copyright>
 
 using System;
