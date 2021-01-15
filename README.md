@@ -25,7 +25,7 @@ Cross-platform, multi-touch gesture and user input recognition for Android, iOS,
 |`PanRecognizer`|❌|❌|
 |`PinchRecognizer`|❌|❌|
 |`HoverRecognizer`|✅|✅|
-|`KeyListener`|✅|❌|
+|`KeyListener`|✅|✅|
 
 ### Xamarin.Forms
 |Type|Android|iOS|macOS|UWP|WPF|
@@ -36,7 +36,7 @@ Cross-platform, multi-touch gesture and user input recognition for Android, iOS,
 |`PanGestureRecognizer`|❌|✅|✅|❌|❌|
 |`PinchGestureRecognizer`|❌|✅|✅|❌|❌|
 |`HoverGestureRecognizer`|✅|✅|✅|✅|✅|
-|`KeyGestureListener`|-|-|❌|✅|❌|
+|`KeyGestureListener`|-|-|❌|✅|✅|
 
 ## Support Notes
 
@@ -58,7 +58,6 @@ Cross-platform, multi-touch gesture and user input recognition for Android, iOS,
 - [ ] Add platform support for swipe, pan and pinch gestures on Android, UWP and WPF.
 - [ ] Add platform support for delay-based long-press recognition on macOS, UWP and WPF.
 - [ ] Add unit tests for shared classes
-- [ ] Add license validator implementation
 - [ ] Add platform sample pags (non-Xamarin.Forms)
 - [ ] Use multi-targeting for Android support libary and AndroidX support.
 - [ ] Implement YAML build script

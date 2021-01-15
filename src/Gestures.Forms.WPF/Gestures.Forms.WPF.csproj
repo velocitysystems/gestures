@@ -61,6 +61,7 @@
     <Compile Include="..\..\SolutionInfo.cs">
       <Link>SolutionInfo.cs</Link>
     </Compile>
+    <Compile Include="Effects\ListenerPlatformEffect.cs" />
     <Compile Include="Effects\RecognizerPlatformEffect.cs" />
     <Compile Include="Platform.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
