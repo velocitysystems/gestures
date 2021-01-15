@@ -2,7 +2,7 @@
 Cross-platform, multi-touch gesture and input recognition for Android, iOS, macOS, UWP and WPF.
 - Supports tap, long-press, swipe, pan, pinch and hover gestures on all platforms
 - Supports key listeners on desktop platforms (macOS, UWP, WPF)
-- Xamarin native support for Android, iOS and macOS.
+- Xamarin support for Android, iOS and macOS.
 - Xamarin.Forms support for all platforms.
 
 [![Build Status](https://dev.azure.com/velocitysystems/gestures/_apis/build/status/velocitysystems.gestures?branchName=master)](https://dev.azure.com/velocitysystems/gestures/_build/latest?definitionId=1&branchName=master)
@@ -32,6 +32,23 @@ Cross-platform, multi-touch gesture and input recognition for Android, iOS, macO
 |`KeyListener`|✅|✅|
 
 ### Xamarin.Forms
+Gestures can be attached to a `View` by adding them to the `GestureRecognizers` [collection](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.view.gesturerecognizers?view=xamarin-forms). For example:
+```
+View.GestureRecognizers.Add(new TapGestureRecognizer()
+{
+    NumberOfTapsRequired = 1,
+    NumberOfTouchesRequired = 2                    
+});
+```
+
+Platform support is enabled by adding a `RecognizerEffect` or `ListenerEffect` to the `Effects` [collection](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.element.effects?view=xamarin-forms). For example:
+```
+View.Effects.Add(Effect.Resolve($"Velocity.{nameof(RecognizerEffect)}"));
+View.Effects.Add(Effect.Resolve($"Velocity.{nameof(ListenerEffect)}"));
+```
+
+Note: If the effect is not added, the gesture or listener will not be handled by Xamarin.Forms.
+
 |Type|Android|iOS|macOS|UWP|WPF|
 |---|---|---|---|---|---|
 |`TapGestureRecognizer`|✅|✅|✅|✅|✅|
