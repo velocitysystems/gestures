@@ -14,7 +14,7 @@ Cross-platform, multi-touch gesture and user input recognition for Android, iOS,
 |`PanRecognizer`|❌|✅|✅|
 |`PinchRecognizer`|❌|✅|✅|
 |`HoverRecognizer`|✅|✅|✅|
-|`KeyListener`|-|-|❌|
+|`KeyListener`|-|-|✅|
 
 ### Windows (.NET Standard)
 |Type|UWP|WPF|
@@ -36,7 +36,7 @@ Cross-platform, multi-touch gesture and user input recognition for Android, iOS,
 |`PanGestureRecognizer`|❌|✅|✅|❌|❌|
 |`PinchGestureRecognizer`|❌|✅|✅|❌|❌|
 |`HoverGestureRecognizer`|✅|✅|✅|✅|✅|
-|`KeyGestureListener`|-|-|❌|✅|✅|
+|`KeyGestureListener`|-|-|✅|✅|✅|
 
 ## Support Notes
 

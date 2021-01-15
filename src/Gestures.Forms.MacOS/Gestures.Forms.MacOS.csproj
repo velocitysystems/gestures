@@ -93,6 +93,7 @@
     </Compile>
     <Compile Include="Platform.cs" />
     <Compile Include="Effects\RecognizerPlatformEffect.cs" />
+    <Compile Include="Effects\ListenerPlatformEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Effects\" />
