@@ -60,6 +60,10 @@ namespace Velocity.Gestures.Forms.Droid
                         _disposable.Add(new LongPressRecognizer(Context, Container, longPress.NumberOfTouchesRequired).Bind(longPress, view, _disposable));
                         break;
 
+                    case FormsSwipeGestureRecognizer swipe:
+                        _disposable.Add(new SwipeRecognizer(Context, Container, swipe.DirectionMask, swipe.NumberOfTouchesRequired).Bind(swipe, view, _disposable));
+                        break;
+
                     case FormsHoverGestureRecognizer hover:
                         _disposable.Add(new HoverRecognizer(Context, Container).Bind(hover, view, _disposable));
                         break;

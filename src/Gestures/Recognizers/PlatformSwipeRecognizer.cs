@@ -73,7 +73,8 @@ namespace Velocity.Gestures
         /// </summary>
         /// <param name="x">The X-coordinate.</param>
         /// <param name="y">The Y-coordinate.</param>
-        protected void OnSwipeEnded(double x, double y)
+        /// <returns>True if a swipe was detected, else false.</returns>
+        protected bool OnSwipeEnded(double x, double y)
         {
             if (_startX is null || _startY is null)
             {
@@ -86,22 +87,27 @@ namespace Velocity.Gestures
             if (DirectionMask.HasFlag(SwipeDirection.Left) && dX < -Threshold)
             {
                 OnSwiped(SwipeDirection.Left);
+                return true;
             }
             else if (DirectionMask.HasFlag(SwipeDirection.Right) && dX > Threshold)
             {
                 OnSwiped(SwipeDirection.Right);
+                return true;
             }
-            else if (DirectionMask.HasFlag(SwipeDirection.Up) && dY > Threshold)
+            else if (DirectionMask.HasFlag(SwipeDirection.Up) && dY < -Threshold)
             {
                 OnSwiped(SwipeDirection.Up);
+                return true;
             }
-            else if (DirectionMask.HasFlag(SwipeDirection.Down) && dY < -Threshold)
+            else if (DirectionMask.HasFlag(SwipeDirection.Down) && dY > Threshold)
             {
                 OnSwiped(SwipeDirection.Down);
+                return true;
             }
 
             _startX = null;
             _startY = null;
+            return false;
         }
 
         /// <summary>
