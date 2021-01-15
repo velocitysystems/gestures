@@ -144,6 +144,7 @@
     <Compile Include="Extensions\VirtualKeyEx.cs" />
     <Compile Include="Listeners\KeyListener.cs" />
     <Compile Include="Recognizers\PanRecognizer.cs" />
+    <Compile Include="Recognizers\PinchRecognizer.cs" />
     <Compile Include="Recognizers\SwipeRecognizer.cs" />
     <Compile Include="Recognizers\LongPressRecognizer.cs" />
     <Compile Include="Recognizers\HoverRecognizer.cs" />

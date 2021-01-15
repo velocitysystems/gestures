@@ -23,7 +23,7 @@ Cross-platform, multi-touch gesture and input recognition using RX for Android, 
 |`LongPressRecognizer`|✅|✅|
 |`SwipeRecognizer`|✅|✅|
 |`PanRecognizer`|✅|✅|
-|`PinchRecognizer`|❌|❌|
+|`PinchRecognizer`|✅|✅|
 |`HoverRecognizer`|✅|✅|
 |`KeyListener`|✅|✅|
 
@@ -34,7 +34,7 @@ Cross-platform, multi-touch gesture and input recognition using RX for Android, 
 |`LongPressGestureRecognizer`|✅|✅|✅|✅|✅|
 |`SwipeGestureRecognizer`|✅|✅|✅|✅|✅|
 |`PanGestureRecognizer`|✅|✅|✅|✅|✅|
-|`PinchGestureRecognizer`|✅|✅|✅|❌|❌|
+|`PinchGestureRecognizer`|✅|✅|✅|✅|✅|
 |`HoverGestureRecognizer`|✅|✅|✅|✅|✅|
 |`KeyGestureListener`|-|-|✅|✅|✅|
 

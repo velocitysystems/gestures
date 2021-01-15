@@ -16,6 +16,7 @@ namespace Velocity.Gestures.Forms.WPF
     using FormsHoverGestureRecognizer = Velocity.Gestures.Forms.HoverGestureRecognizer;
     using FormsLongPressGestureRecognizer = Velocity.Gestures.Forms.LongPressGestureRecognizer;
     using FormsPanGestureRecognizer = Velocity.Gestures.Forms.PanGestureRecognizer;
+    using FormsPinchGestureRecognizer = Velocity.Gestures.Forms.PinchGestureRecognizer;
     using FormsSwipeGestureRecognizer = Velocity.Gestures.Forms.SwipeGestureRecognizer;
     using FormsTapGestureRecognizer = Velocity.Gestures.Forms.TapGestureRecognizer;
 
@@ -62,6 +63,10 @@ namespace Velocity.Gestures.Forms.WPF
 
                     case FormsPanGestureRecognizer pan:
                         _disposable.Add(new PanRecognizer(Control).Bind(pan, view, _disposable));
+                        break;
+
+                    case FormsPinchGestureRecognizer pinch:
+                        _disposable.Add(new PinchRecognizer(Control).Bind(pinch, view, _disposable));
                         break;
 
                     case FormsHoverGestureRecognizer hover:
