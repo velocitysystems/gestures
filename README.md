@@ -1,5 +1,5 @@
 # gestures
-Cross-platform, multi-touch gesture and user input recognition for Android, iOS, macOS, UWP and WPF.
+Cross-platform, multi-touch gesture and input recognition using RX for Android, iOS, macOS, UWP and WPF.
 
 [![Build Status](https://dev.azure.com/velocitysystems/gestures/_apis/build/status/velocitysystems.gestures?branchName=master)](https://dev.azure.com/velocitysystems/gestures/_build/latest?definitionId=1&branchName=master)
 
@@ -21,8 +21,8 @@ Cross-platform, multi-touch gesture and user input recognition for Android, iOS,
 |---|---|---|
 |`TapRecognizer`|✅|✅|
 |`LongPressRecognizer`|✅|✅|
-|`SwipeRecognizer`|❌|❌|
-|`PanRecognizer`|❌|❌|
+|`SwipeRecognizer`|✅|✅|
+|`PanRecognizer`|✅|✅|
 |`PinchRecognizer`|❌|❌|
 |`HoverRecognizer`|✅|✅|
 |`KeyListener`|✅|✅|
@@ -32,8 +32,8 @@ Cross-platform, multi-touch gesture and user input recognition for Android, iOS,
 |---|---|---|---|---|---|
 |`TapGestureRecognizer`|✅|✅|✅|✅|✅|
 |`LongPressGestureRecognizer`|✅|✅|✅|✅|✅|
-|`SwipeGestureRecognizer`|✅|✅|✅|❌|❌|
-|`PanGestureRecognizer`|✅|✅|✅|❌|❌|
+|`SwipeGestureRecognizer`|✅|✅|✅|✅|✅|
+|`PanGestureRecognizer`|✅|✅|✅|✅|✅|
 |`PinchGestureRecognizer`|✅|✅|✅|❌|❌|
 |`HoverGestureRecognizer`|✅|✅|✅|✅|✅|
 |`KeyGestureListener`|-|-|✅|✅|✅|
@@ -56,8 +56,8 @@ Cross-platform, multi-touch gesture and user input recognition for Android, iOS,
 ## Remaining Work
 - [X] Migrate to AndroidX
 - [X] Add detection algorithms for platforms which do not offer native recognition.
-- [ ] Add platform support for swipe, pan and pinch gestures on UWP and WPF.
-- [ ] Add platform support for delay-based long-press recognition on macOS, UWP and WPF.
+- [ ] Add delay-based long-press recognition on macOS, UWP and WPF.
+- [ ] Add multi-touch support for platforms which do not offer native recognition.
 - [ ] Add unit tests for shared classes
 - [ ] Add platform sample pages (non-Xamarin.Forms)
 - [ ] Unify values returned by PinchGestureRecognizer across all platforms.

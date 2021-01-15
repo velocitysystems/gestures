@@ -73,6 +73,8 @@
     </Compile>
     <Compile Include="Recognizers\HoverRecognizer.cs" />
     <Compile Include="Recognizers\LongPressRecognizer.cs" />
+    <Compile Include="Recognizers\PanRecognizer.cs" />
+    <Compile Include="Recognizers\SwipeRecognizer.cs" />
     <Compile Include="Recognizers\TapRecognizer.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -15,6 +15,8 @@ namespace Velocity.Gestures.Forms.WPF
     using Xamarin.Forms.Platform.WPF;
     using FormsHoverGestureRecognizer = Velocity.Gestures.Forms.HoverGestureRecognizer;
     using FormsLongPressGestureRecognizer = Velocity.Gestures.Forms.LongPressGestureRecognizer;
+    using FormsPanGestureRecognizer = Velocity.Gestures.Forms.PanGestureRecognizer;
+    using FormsSwipeGestureRecognizer = Velocity.Gestures.Forms.SwipeGestureRecognizer;
     using FormsTapGestureRecognizer = Velocity.Gestures.Forms.TapGestureRecognizer;
 
     /// <summary>
@@ -52,6 +54,14 @@ namespace Velocity.Gestures.Forms.WPF
 
                     case FormsLongPressGestureRecognizer longPress:
                         _disposable.Add(new LongPressRecognizer(Control, longPress.NumberOfTouchesRequired).Bind(longPress, view, _disposable));
+                        break;
+
+                    case FormsSwipeGestureRecognizer swipe:
+                        _disposable.Add(new SwipeRecognizer(Control, swipe.DirectionMask, swipe.NumberOfTouchesRequired).Bind(swipe, view, _disposable));
+                        break;
+
+                    case FormsPanGestureRecognizer pan:
+                        _disposable.Add(new PanRecognizer(Control).Bind(pan, view, _disposable));
                         break;
 
                     case FormsHoverGestureRecognizer hover:
