@@ -13,7 +13,7 @@ namespace Velocity.Gestures.MacOs
     public static class VirtualKeyEx
     {
         /// <summary>
-        /// Mapping dictionary between a <see cref="WKey"/> and a <see cref="Key"/>.
+        /// Mapping dictionary between a <see cref="NSEvent"/> keycode and a <see cref="Key"/>.
         /// </summary>
         private static readonly Dictionary<ushort, Key> _lookup = new Dictionary<ushort, Key>()
         {
