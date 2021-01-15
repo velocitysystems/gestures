@@ -56,6 +56,7 @@
     <Compile Include="Recognizers\LongPressRecognizer.cs" />
     <Compile Include="Recognizers\HoverRecognizer.cs" />
     <Compile Include="Recognizers\SwipeRecognizer.cs" />
+    <Compile Include="Recognizers\PanRecognizer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

@@ -64,6 +64,10 @@ namespace Velocity.Gestures.Forms.Droid
                         _disposable.Add(new SwipeRecognizer(Context, Container, swipe.DirectionMask, swipe.NumberOfTouchesRequired).Bind(swipe, view, _disposable));
                         break;
 
+                    case FormsPanGestureRecognizer pan:
+                        _disposable.Add(new PanRecognizer(Context, Container).Bind(pan, view, _disposable));
+                        break;
+
                     case FormsHoverGestureRecognizer hover:
                         _disposable.Add(new HoverRecognizer(Context, Container).Bind(hover, view, _disposable));
                         break;
