@@ -39,6 +39,11 @@ namespace Velocity.Gestures
         protected void OnPinchingStarted(double x, double y) => _pinchingSubject.OnNext(new PinchEvent(x, y));
 
         /// <summary>
+        /// Call when pinching has ended.
+        /// </summary>
+        protected void OnPinchingEnded() => _pinchingSubject.OnNext(new PinchEvent(GestureState.Ended));
+
+        /// <summary>
         /// Call when pinching scale has changed.
         /// </summary>
         /// <param name="scale">The pinch scale.</param>

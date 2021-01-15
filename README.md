@@ -11,8 +11,8 @@ Cross-platform, multi-touch gesture and user input recognition for Android, iOS,
 |`TapRecognizer`|✅|✅|✅|
 |`LongPressRecognizer`|✅|✅|✅|
 |`SwipeRecognizer`|✅|✅|✅|
-|`PanRecognizer`|❌|✅|✅|
-|`PinchRecognizer`|❌|✅|✅|
+|`PanRecognizer`|✅|✅|✅|
+|`PinchRecognizer`|✅|✅|✅|
 |`HoverRecognizer`|✅|✅|✅|
 |`KeyListener`|-|-|✅|
 
@@ -33,8 +33,8 @@ Cross-platform, multi-touch gesture and user input recognition for Android, iOS,
 |`TapGestureRecognizer`|✅|✅|✅|✅|✅|
 |`LongPressGestureRecognizer`|✅|✅|✅|✅|✅|
 |`SwipeGestureRecognizer`|✅|✅|✅|❌|❌|
-|`PanGestureRecognizer`|❌|✅|✅|❌|❌|
-|`PinchGestureRecognizer`|❌|✅|✅|❌|❌|
+|`PanGestureRecognizer`|✅|✅|✅|❌|❌|
+|`PinchGestureRecognizer`|✅|✅|✅|❌|❌|
 |`HoverGestureRecognizer`|✅|✅|✅|✅|✅|
 |`KeyGestureListener`|-|-|✅|✅|✅|
 
@@ -54,10 +54,11 @@ Cross-platform, multi-touch gesture and user input recognition for Android, iOS,
 2. Long-press recognizer is triggered by a right-click.
 
 ## Remaining Work
+- [X] Migrate to AndroidX
 - [X] Add detection algorithms for platforms which do not offer native recognition.
-- [ ] Add platform support for swipe, pan and pinch gestures on Android, UWP and WPF.
+- [ ] Add platform support for swipe, pan and pinch gestures on UWP and WPF.
 - [ ] Add platform support for delay-based long-press recognition on macOS, UWP and WPF.
 - [ ] Add unit tests for shared classes
 - [ ] Add platform sample pages (non-Xamarin.Forms)
-- [ ] Use multi-targeting for Android support libary and AndroidX support.
+- [ ] Unify values returned by PinchGestureRecognizer across all platforms.
 - [ ] Implement YAML build script
