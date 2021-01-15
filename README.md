@@ -1,11 +1,12 @@
 # gestures
 Cross-platform, multi-touch gesture and input recognition for Android, iOS, macOS, UWP and WPF.
+
+[![Build Status](https://dev.azure.com/velocitysystems/gestures/_apis/build/status/velocitysystems.gestures?branchName=master)](https://dev.azure.com/velocitysystems/gestures/_build/latest?definitionId=1&branchName=master)
+
 - Supports tap, long-press, swipe, pan, pinch and hover gestures on all platforms
 - Supports key listeners on desktop platforms (macOS, UWP, WPF)
 - Xamarin support for Android, iOS and macOS.
 - Xamarin.Forms support for all platforms.
-
-[![Build Status](https://dev.azure.com/velocitysystems/gestures/_apis/build/status/velocitysystems.gestures?branchName=master)](https://dev.azure.com/velocitysystems/gestures/_build/latest?definitionId=1&branchName=master)
 
 ## Platforms
 
