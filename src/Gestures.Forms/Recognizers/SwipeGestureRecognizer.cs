@@ -37,7 +37,7 @@ namespace Velocity.Gestures.Forms
         }
 
         /// <summary>
-        /// Invoke the long-pressed event.
+        /// Invoke the swiped event.
         /// </summary>
         /// <param name="sender">The sender.</param>
         /// <param name="direction">The swipe direction.</param>

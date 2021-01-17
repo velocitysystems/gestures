@@ -8,14 +8,14 @@
 
   <Identity
     Name="95a70b4c-9da9-47b6-8991-32f65b8a12a8"
-    Publisher="CN=matthew"
+    Publisher="CN=350a5575-35d1-4eb8-a859-d585bf32542f"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="95a70b4c-9da9-47b6-8991-32f65b8a12a8" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>Gestures.Sample.UWP</DisplayName>
-    <PublisherDisplayName>matthew</PublisherDisplayName>
+    <PublisherDisplayName>350a5575-35d1-4eb8-a859-d585bf32542f</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
