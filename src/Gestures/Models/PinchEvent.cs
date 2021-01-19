@@ -23,20 +23,20 @@ namespace Velocity.Gestures
         /// <summary>
         /// Initializes a new instance of the <see cref="PinchEvent"/> class.
         /// </summary>
-        /// <param name="state">The gesture state.</param>
-        internal PinchEvent(GestureState state)
-        {
-            State = state;
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PinchEvent"/> class.
-        /// </summary>
         /// <param name="scale">The pinch scale.</param>
         internal PinchEvent(double scale)
         {
             State = GestureState.Changed;
             Scale = scale;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PinchEvent"/> class.
+        /// </summary>
+        /// <param name="state">The gesture state.</param>
+        internal PinchEvent(GestureState state)
+        {
+            State = state;
         }
 
         /// <summary>

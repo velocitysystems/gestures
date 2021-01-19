@@ -44,9 +44,9 @@ namespace Velocity.Gestures.Tests
         public void OnSwipeBegan_throws_if_swipe_already_in_progress()
         {
             var recognizer = new PlatformSwipeRecognizerStub(new object(), SwipeDirection.Any, 1);
-            recognizer.OnSwipeBegan(1, 1);
+            recognizer.OnSwipeBegan(0, 0);
 
-            Assert.Throws<InvalidOperationException>(() => recognizer.OnSwipeBegan(1, 1));
+            Assert.Throws<InvalidOperationException>(() => recognizer.OnSwipeBegan(0, 0));
         }
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Velocity.Gestures.Tests
         public void OnSwipeEnded_throws_if_swipe_not_in_progress()
         {
             var recognizer = new PlatformSwipeRecognizerStub(new object(), SwipeDirection.Any, 1);
-            Assert.Throws<InvalidOperationException>(() => recognizer.OnSwipeEnded(1, 1));
+            Assert.Throws<InvalidOperationException>(() => recognizer.OnSwipeEnded(0, 0));
         }
 
         /// <summary>
@@ -123,6 +123,16 @@ namespace Velocity.Gestures.Tests
         }
 
         /// <summary>
+        /// Tests that the method throws if a swipe is not in progress.
+        /// </summary>
+        [Fact]
+        public void OnSwipeCancelled_throws_if_swipe_not_in_progress()
+        {
+            var recognizer = new PlatformSwipeRecognizerStub(new object(), SwipeDirection.Any, 1);
+            Assert.Throws<InvalidOperationException>(() => recognizer.OnSwipeCancelled());
+        }
+
+        /// <summary>
         /// Tests that the property is true when a swipe begins.
         /// </summary>
         [Fact]
@@ -141,7 +151,7 @@ namespace Velocity.Gestures.Tests
         {
             var recognizer = new PlatformSwipeRecognizerStub(new object(), SwipeDirection.Any, 1);
             recognizer.OnSwipeBegan(0, 0);
-            recognizer.OnSwipeEnded(2, 2);
+            recognizer.OnSwipeEnded(1, 1);
             recognizer.SwipeInProgress.Should().BeFalse("since the swipe has ended");
         }
 
