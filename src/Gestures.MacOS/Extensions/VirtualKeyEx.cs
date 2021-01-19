@@ -148,6 +148,6 @@ namespace Velocity.Gestures.MacOs
         /// </summary>
         /// <param name="ev">The <see cref="NSEvent"/>.</param>
         /// <returns>The <see cref="Key"/>.</returns>
-        public static Key ToKey(this NSEvent ev) => _lookup[ev.KeyCode];
+        public static Key ToKey(this NSEvent ev) => _lookup.TryGetValue(ev.KeyCode, out var match) ? match : Key.None;
     }
 }

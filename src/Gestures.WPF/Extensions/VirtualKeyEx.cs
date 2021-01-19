@@ -148,6 +148,6 @@ namespace Velocity.Gestures.WPF
         /// </summary>
         /// <param name="key">The <see cref="WKey"/>.</param>
         /// <returns>The <see cref="Key"/>.</returns>
-        public static Key ToKey(this WKey key) => _lookup[key];
+        public static Key ToKey(this WKey key) => _lookup.TryGetValue(key, out var match) ? match : Key.None;
     }
 }

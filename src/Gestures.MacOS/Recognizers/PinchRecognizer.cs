@@ -29,7 +29,7 @@ namespace Velocity.Gestures.MacOS
                 {
                     case NSGestureRecognizerState.Began:
                         OnTouchesBegan(point.X, point.Y);
-                        OnPinchingStarted(point.X, point.Y);
+                        OnPinchingBegan(point.X, point.Y);
                         break;
 
                     case NSGestureRecognizerState.Changed:

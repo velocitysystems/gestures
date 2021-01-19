@@ -235,9 +235,9 @@ Not all recognizers may work together concurrently. For example, you cannot use 
 ## Remaining Work
 - [X] Migrate to AndroidX
 - [X] Add detection algorithms for platforms which do not offer native recognition.
+- [X] Add unit tests for shared behavior
 - [ ] Add delay-based long-press recognition on macOS, UWP and WPF.
 - [ ] Add multi-touch support for platforms which do not offer native recognition.
-- [ ] Add unit tests for shared classes
 - [ ] Add platform sample pages (non-Xamarin.Forms)
 - [ ] Unify values returned by PinchGestureRecognizer across all platforms.
 - [ ] Implement YAML build script

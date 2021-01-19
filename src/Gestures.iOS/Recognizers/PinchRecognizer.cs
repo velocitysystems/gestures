@@ -53,7 +53,7 @@ namespace Velocity.Gestures.iOS
                             }
 
                             var origin = LocationInView(recognizer.View);
-                            recognizer.OnPinchingStarted(origin.X, origin.Y);
+                            recognizer.OnPinchingBegan(origin.X, origin.Y);
                             isPinching = true;
                             break;
 

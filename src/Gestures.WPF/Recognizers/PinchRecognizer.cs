@@ -36,14 +36,14 @@ namespace Velocity.Gestures.WPF
         private void OnManipulationStarted(object sender, ManipulationStartedEventArgs e)
         {
             OnTouchesBegan(e.ManipulationOrigin.X, e.ManipulationOrigin.Y);
-            OnPinchingStarted(e.ManipulationOrigin.X, e.ManipulationOrigin.Y);
+            OnPinchingBegan(e.ManipulationOrigin.X, e.ManipulationOrigin.Y);
         }
 
         private void OnManipulationDelta(object sender, ManipulationDeltaEventArgs e) => OnPinchingScaleChanged(e.CumulativeManipulation.Scale.Length);
 
         private void OnManipulationCompleted(object sender, ManipulationCompletedEventArgs e)
         {
-            OnPinchingEnded();
+            OnPinchingStateChanged(GestureState.Ended);
             OnTouchesEnded(e.ManipulationOrigin.X, e.ManipulationOrigin.Y);
         }
     }

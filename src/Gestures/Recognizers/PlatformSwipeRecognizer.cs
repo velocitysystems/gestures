@@ -26,9 +26,14 @@ namespace Velocity.Gestures
         /// <param name="view">The native view.</param>
         /// <param name="directionMask">The direction mask.</param>
         /// <param name="numberOfTouchesRequired">The number of touches required.</param>
-        /// <param name="threshold">Optional default threshold in pixels before a swipe is detected.</param>
+        /// <param name="threshold">Optional threshold in pixels before a swipe is detected.</param>
         protected PlatformSwipeRecognizer(TView view, SwipeDirection directionMask, int numberOfTouchesRequired, int threshold = Defaults.Threshold) : base(view, numberOfTouchesRequired)
         {
+            if (threshold < Defaults.Threshold)
+            {
+                throw new ArgumentException(nameof(numberOfTouchesRequired), $"Threshold must be greater than {Defaults.Threshold}.");
+            }
+
             DirectionMask = directionMask;
             Threshold = threshold;
 
@@ -43,6 +48,12 @@ namespace Velocity.Gestures
         public IObservable<SwipeDirection> Swiped { get; }
 
         /// <summary>
+        /// Gets a value indicating whether a swipe is in progress.
+        /// This may be used for testing purposes or on platforms which do not have an inbuilt swipe gesture recognizer.
+        /// </summary>
+        internal bool SwipeInProgress => _startX is double && _startY is double;
+
+        /// <summary>
         /// Gets the threshold in pixels before a swipe is detected.
         /// This is only used by platforms which do not have an inbuilt swipe gesture recognizer.
         /// </summary>
@@ -55,17 +66,13 @@ namespace Velocity.Gestures
         /// <param name="y">The Y-coordinate.</param>
         protected void OnSwipeBegan(double x, double y)
         {
+            if (SwipeInProgress)
+            {
+                throw new InvalidOperationException($"You must call {nameof(OnSwipeCancelled)} or {nameof(OnSwipeEnded)} before calling {nameof(OnSwipeBegan)}.");
+            }
+
             _startX = x;
             _startY = y;
-        }
-
-        /// <summary>
-        /// Call when the swipe was cancelled or failed.
-        /// </summary>
-        protected void OnSwipeCancelled()
-        {
-            _startX = null;
-            _startY = null;
         }
 
         /// <summary>
@@ -73,10 +80,10 @@ namespace Velocity.Gestures
         /// </summary>
         /// <param name="x">The X-coordinate.</param>
         /// <param name="y">The Y-coordinate.</param>
-        /// <returns>True if a swipe was detected, else false.</returns>
+        /// <returns>True if a valid swipe was detected, else false.</returns>
         protected bool OnSwipeEnded(double x, double y)
         {
-            if (_startX is null || _startY is null)
+            if (!SwipeInProgress)
             {
                 throw new InvalidOperationException($"You must call {nameof(OnSwipeBegan)} before calling {nameof(OnSwipeEnded)}.");
             }
@@ -84,36 +91,66 @@ namespace Velocity.Gestures
             var dX = x - _startX;
             var dY = y - _startY;
 
-            if (DirectionMask.HasFlag(SwipeDirection.Left) && dX < -Threshold)
+            if (DirectionMask.HasFlag(SwipeDirection.Left) && dX <= -Threshold)
             {
-                OnSwiped(SwipeDirection.Left);
-                return true;
+                return HandleSwipe(SwipeDirection.Left);
             }
-            else if (DirectionMask.HasFlag(SwipeDirection.Right) && dX > Threshold)
+            else if (DirectionMask.HasFlag(SwipeDirection.Right) && dX >= Threshold)
             {
-                OnSwiped(SwipeDirection.Right);
-                return true;
+                return HandleSwipe(SwipeDirection.Right);
             }
-            else if (DirectionMask.HasFlag(SwipeDirection.Up) && dY < -Threshold)
+            else if (DirectionMask.HasFlag(SwipeDirection.Up) && dY <= -Threshold)
             {
-                OnSwiped(SwipeDirection.Up);
-                return true;
+                return HandleSwipe(SwipeDirection.Up);
             }
-            else if (DirectionMask.HasFlag(SwipeDirection.Down) && dY > Threshold)
+            else if (DirectionMask.HasFlag(SwipeDirection.Down) && dY >= Threshold)
             {
-                OnSwiped(SwipeDirection.Down);
-                return true;
+                return HandleSwipe(SwipeDirection.Down);
+            }
+
+            return HandleSwipe();
+
+            bool HandleSwipe(SwipeDirection? direction = default)
+            {
+                if (direction.HasValue)
+                {
+                    OnSwiped(direction.Value);
+                }
+
+                _startX = null;
+                _startY = null;
+                return direction.HasValue;
+            }
+        }
+
+        /// <summary>
+        /// Call when the swipe was cancelled or failed.
+        /// </summary>
+        protected void OnSwipeCancelled()
+        {
+            if (!SwipeInProgress)
+            {
+                throw new InvalidOperationException($"You must call {nameof(OnSwipeBegan)} before calling {nameof(OnSwipeCancelled)}.");
             }
 
             _startX = null;
             _startY = null;
-            return false;
         }
 
         /// <summary>
         /// Call when swiped.
         /// </summary>
         /// <param name="direction">The direction.</param>
-        protected void OnSwiped(SwipeDirection direction) => _swipedSubject.OnNext(direction);
+        /// <returns>True if a valid swipe was detected, else false.</returns>
+        protected bool OnSwiped(SwipeDirection direction)
+        {
+            if (DirectionMask.HasFlag(direction))
+            {
+                _swipedSubject.OnNext(direction);
+                return true;
+            }
+
+            return false;
+        }
     }
 }

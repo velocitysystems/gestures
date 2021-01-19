@@ -73,15 +73,12 @@ namespace Velocity.Gestures.Droid
             /// <inheritdoc/>
             public bool OnScaleBegin(ScaleGestureDetector detector)
             {
-                _recognizer.OnPinchingStarted(detector.FocusX, detector.FocusY);
+                _recognizer.OnPinchingBegan(detector.FocusX, detector.FocusY);
                 return true;
             }
 
             /// <inheritdoc/>
-            public void OnScaleEnd(ScaleGestureDetector detector)
-            {
-                _recognizer.OnPinchingEnded();
-            }
+            public void OnScaleEnd(ScaleGestureDetector detector) => _recognizer.OnPinchingStateChanged(GestureState.Ended);
         }
     }
 }

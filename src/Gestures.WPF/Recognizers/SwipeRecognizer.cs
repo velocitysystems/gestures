@@ -13,8 +13,6 @@ namespace Velocity.Gestures.WPF
     /// </summary>
     public class SwipeRecognizer : PlatformSwipeRecognizer<FrameworkElement>
     {
-        private bool _started;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="SwipeRecognizer"/> class.
         /// </summary>
@@ -45,7 +43,6 @@ namespace Velocity.Gestures.WPF
 
             OnTouchesBegan(point.X, point.Y);
             OnSwipeBegan(point.X, point.Y);
-            _started = true;
         }
 
         private void OnMouseUp(object sender, MouseButtonEventArgs e) => OnMouseEnded(e.GetPosition(View));
@@ -54,14 +51,13 @@ namespace Velocity.Gestures.WPF
 
         private void OnMouseEnded(WPoint point)
         {
-            if (!_started)
+            if (!SwipeInProgress)
             {
                 return;
             }
 
             OnSwipeEnded(point.X, point.Y);
             OnTouchesEnded(point.X, point.Y);
-            _started = false;
         }
     }
 }

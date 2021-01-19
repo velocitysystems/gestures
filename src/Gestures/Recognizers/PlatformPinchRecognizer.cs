@@ -32,16 +32,11 @@ namespace Velocity.Gestures
         public IObservable<PinchEvent> Pinching { get; }
 
         /// <summary>
-        /// Call when pinching has started.
+        /// Call when pinching began.
         /// </summary>
         /// <param name="x">The X-coordinate.</param>
         /// <param name="y">The Y-coordinate.</param>
-        protected void OnPinchingStarted(double x, double y) => _pinchingSubject.OnNext(new PinchEvent(x, y));
-
-        /// <summary>
-        /// Call when pinching has ended.
-        /// </summary>
-        protected void OnPinchingEnded() => _pinchingSubject.OnNext(new PinchEvent(GestureState.Ended));
+        protected void OnPinchingBegan(double x, double y) => _pinchingSubject.OnNext(new PinchEvent(x, y));
 
         /// <summary>
         /// Call when pinching scale has changed.
