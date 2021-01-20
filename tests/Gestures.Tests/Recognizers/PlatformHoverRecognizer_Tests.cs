@@ -10,7 +10,7 @@ using Xunit;
 namespace Velocity.Gestures.Tests
 {
     /// <summary>
-    /// Tests the implementation of <see cref="PlatformHoverRecognizer{TView}{TView}"/>.
+    /// Tests the implementation of <see cref="PlatformHoverRecognizer{TView}"/>.
     /// </summary>
     public class PlatformHoverRecognizer_Tests
     {

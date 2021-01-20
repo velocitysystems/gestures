@@ -4,7 +4,6 @@
 
 using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Reactive.Linq;
@@ -52,6 +51,12 @@ namespace Velocity.Gestures
         public IObservable<Key> KeyUp { get; }
 
         /// <summary>
+        /// Gets a value indicating whether a key sequence is in progress.
+        /// This may be used for testing purposes or to determine if one or more key(s) are being pressed.
+        /// </summary>
+        internal bool KeySequenceInProgress { get; private set; }
+
+        /// <summary>
         /// Call when key down received.
         /// </summary>
         /// <param name="key">The key.</param>
@@ -63,6 +68,8 @@ namespace Velocity.Gestures
             // Fire if one or more key(s) are pressed.
             var keys = _concurrentKeys.OrderBy(q => q.Value).Select(q => q.Key);
             _pressedSubject.OnNext(keys.ToArray());
+
+            KeySequenceInProgress = true;
         }
 
         /// <summary>
@@ -71,8 +78,18 @@ namespace Velocity.Gestures
         /// <param name="key">The key.</param>
         protected void OnKeyUp(Key key)
         {
+            if (!_concurrentKeys.ContainsKey(key))
+            {
+                throw new InvalidOperationException($"You must call {nameof(OnKeyDown)} before calling {nameof(OnKeyUp)}.");
+            }
+
             _keyUpSubject.OnNext(key);
             _concurrentKeys.TryRemove(key, out _);
+
+            if (_concurrentKeys.Count == 0)
+            {
+                KeySequenceInProgress = false;
+            }
         }
     }
 }
