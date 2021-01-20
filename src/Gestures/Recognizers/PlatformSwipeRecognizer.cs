@@ -17,8 +17,7 @@ namespace Velocity.Gestures
     public abstract class PlatformSwipeRecognizer<TView> : PlatformRecognizer<TView>, ISwipeRecognizer<TView> where TView : class
     {
         private readonly Subject<SwipeDirection> _swipedSubject;
-        private double? _startX;
-        private double? _startY;
+        private Point _start;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="PlatformSwipeRecognizer{TView}"/> class.
@@ -51,7 +50,7 @@ namespace Velocity.Gestures
         /// Gets a value indicating whether a swipe is in progress.
         /// This may be used for testing purposes or on platforms which do not have an inbuilt swipe gesture recognizer.
         /// </summary>
-        internal bool SwipeInProgress => _startX is double && _startY is double;
+        internal bool SwipeInProgress => _start is Point;
 
         /// <summary>
         /// Gets the threshold in pixels before a swipe is detected.
@@ -71,8 +70,7 @@ namespace Velocity.Gestures
                 throw new InvalidOperationException($"You must call {nameof(OnSwipeCancelled)} or {nameof(OnSwipeEnded)} before calling {nameof(OnSwipeBegan)}.");
             }
 
-            _startX = x;
-            _startY = y;
+            _start = new Point(x, y);
         }
 
         /// <summary>
@@ -88,8 +86,8 @@ namespace Velocity.Gestures
                 throw new InvalidOperationException($"You must call {nameof(OnSwipeBegan)} before calling {nameof(OnSwipeEnded)}.");
             }
 
-            var dX = x - _startX;
-            var dY = y - _startY;
+            var dX = x - _start.X;
+            var dY = y - _start.Y;
 
             if (DirectionMask.HasFlag(SwipeDirection.Left) && dX <= -Threshold)
             {
@@ -117,8 +115,7 @@ namespace Velocity.Gestures
                     OnSwiped(direction.Value);
                 }
 
-                _startX = null;
-                _startY = null;
+                _start = default;
                 return direction.HasValue;
             }
         }
@@ -133,8 +130,7 @@ namespace Velocity.Gestures
                 throw new InvalidOperationException($"You must call {nameof(OnSwipeBegan)} before calling {nameof(OnSwipeCancelled)}.");
             }
 
-            _startX = null;
-            _startY = null;
+            _start = default;
         }
 
         /// <summary>

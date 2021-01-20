@@ -17,6 +17,7 @@ namespace Velocity.Gestures
     public abstract class PlatformPanRecognizer<TView> : PlatformRecognizer<TView>, IPanRecognizer<TView> where TView : class
     {
         private readonly Subject<PanEvent> _panningSubject;
+        private Point _start;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="PlatformPanRecognizer{TView}"/> class.
@@ -32,16 +33,85 @@ namespace Velocity.Gestures
         public IObservable<PanEvent> Panning { get; }
 
         /// <summary>
+        /// Gets a value indicating whether a pan is in progress.
+        /// This may be used for testing purposes or on platforms which do not have an inbuilt pan gesture recognizer.
+        /// </summary>
+        internal bool PanInProgress { get; private set; }
+
+        /// <summary>
+        /// Call when panning began.
+        /// </summary>
+        /// <param name="x">The X-coordinate.</param>
+        /// <param name="y">The Y-coordinate.</param>
+        protected void OnPanningBegan(double x, double y)
+        {
+            if (PanInProgress)
+            {
+                throw new InvalidOperationException($"You must call {nameof(OnPanningStateChanged)} before calling {nameof(OnPanningBegan)}.");
+            }
+
+            _start = new Point(x, y);
+            _panningSubject.OnNext(new PanEvent(GestureState.Began));
+            PanInProgress = true;
+        }
+
+        /// <summary>
         /// Call when panning state has changed.
         /// </summary>
         /// <param name="state">The gesture state.</param>
-        protected void OnPanningStateChanged(GestureState state) => _panningSubject.OnNext(new PanEvent(state));
+        protected void OnPanningStateChanged(GestureState state)
+        {
+            if (state == GestureState.Began)
+            {
+                if (PanInProgress)
+                {
+                    throw new InvalidOperationException($"You must call {nameof(OnPanningStateChanged)} to end the gesture.");
+                }
+
+                _panningSubject.OnNext(new PanEvent(state));
+                PanInProgress = true;
+                return;
+            }
+
+            if (!PanInProgress)
+            {
+                throw new InvalidOperationException($"You must call {nameof(OnPanningStateChanged)} to begin the gesture.");
+            }
+
+            _panningSubject.OnNext(new PanEvent(state));
+            PanInProgress = false;
+        }
 
         /// <summary>
         /// Call when panning delta has changed.
         /// </summary>
         /// <param name="totalX">The translation along the X-axis.</param>
         /// <param name="totalY">The translation along the Y-axis.</param>
-        protected void OnPanningDeltaChanged(double totalX, double totalY) => _panningSubject.OnNext(new PanEvent(totalX, totalY));
+        protected void OnPanningDeltaChanged(double totalX, double totalY)
+        {
+            if (!PanInProgress)
+            {
+                throw new InvalidOperationException($"You must call {nameof(OnPanningStateChanged)} before calling {nameof(OnPanningDeltaChanged)}.");
+            }
+
+            _panningSubject.OnNext(new PanEvent(totalX, totalY));
+        }
+
+        /// <summary>
+        /// Call when panning position has changed.
+        /// </summary>
+        /// <param name="x">The X-coordinate.</param>
+        /// <param name="y">The Y-coordinate.</param>
+        protected void OnPanningPositionChanged(double x, double y)
+        {
+            if (!PanInProgress || _start is null)
+            {
+                throw new InvalidOperationException($"You must call {nameof(OnPanningBegan)} before calling {nameof(OnPanningPositionChanged)}.");
+            }
+
+            var totalX = x - _start.X;
+            var totalY = y - _start.Y;
+            _panningSubject.OnNext(new PanEvent(totalX, totalY));
+        }
     }
 }

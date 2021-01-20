@@ -13,8 +13,6 @@ namespace Velocity.Gestures.WPF
     /// </summary>
     public class PanRecognizer : PlatformPanRecognizer<FrameworkElement>
     {
-        private WPoint _point;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="PanRecognizer"/> class.
         /// </summary>
@@ -44,22 +42,18 @@ namespace Velocity.Gestures.WPF
             var point = e.GetPosition(View);
 
             OnTouchesBegan(point.X, point.Y);
-            OnPanningStateChanged(GestureState.Began);
-            _point = point;
+            OnPanningBegan(point.X, point.Y);
         }
 
         private void OnMouseMove(object sender, MouseEventArgs e)
         {
-            if (_point == default)
+            if (!PanInProgress)
             {
                 return;
             }
 
             var point = e.GetPosition(View);
-            var dX = point.X - _point.X;
-            var dY = point.Y - _point.Y;
-
-            OnPanningDeltaChanged(dX, dY);
+            OnPanningPositionChanged(point.X, point.Y);
         }
 
         private void OnMouseUp(object sender, MouseButtonEventArgs e) => OnMouseEnded(e.GetPosition(View));
@@ -68,14 +62,13 @@ namespace Velocity.Gestures.WPF
 
         private void OnMouseEnded(WPoint point)
         {
-            if (_point == default)
+            if (!PanInProgress)
             {
                 return;
             }
 
             OnPanningStateChanged(GestureState.Ended);
             OnTouchesEnded(point.X, point.Y);
-            _point = default;
         }
     }
 }
