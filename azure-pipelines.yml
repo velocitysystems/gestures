@@ -5,18 +5,22 @@
 
 trigger:
 - master
+  
+stages:
+- stage: Prebuild
+  jobs:
+  - job: Tests
+    pool:
+      vmImage: 'ubuntu-latest'
 
-pool:
-  vmImage: 'ubuntu-latest'
-
-steps:
-- task: DotNetCoreCLI@2
-  displayName: dotnet restore
-  inputs:
-    command: 'restore'
-    projects: 'tests/Gestures.Tests/Gestures.Tests.csproj'
-- task: DotNetCoreCLI@2
-  displayName: dotnet test
-  inputs:
-    command: 'test'
-    projects: 'tests/Gestures.Tests/Gestures.Tests.csproj'
+    steps:
+    - task: DotNetCoreCLI@2
+      displayName: dotnet restore
+      inputs:
+        command: 'restore'
+        projects: 'tests/Gestures.Tests/Gestures.Tests.csproj'
+    - task: DotNetCoreCLI@2
+      displayName: dotnet test
+      inputs:
+        command: 'test'
+        projects: 'tests/Gestures.Tests/Gestures.Tests.csproj'
